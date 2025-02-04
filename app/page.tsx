@@ -33,7 +33,7 @@ const Home: React.FC = () => {
             <div className="flex-col items-center mb-40">
               <div className="flex justify-center mb-2">
                 <Image
-                  src="/caticon.png"
+                  src="/thinkingcat.png"
                   alt="cat icon"
                   width={100}
                   height={100}
