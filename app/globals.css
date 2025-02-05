@@ -17,5 +17,23 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'SUITE-Regular', sans-serif, Arial, Helvetica;
+}
+
+/* 먼저 폰트를 선언합니다 */
+@font-face {
+  font-family: 'SUITE-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 전체 페이지에 폰트를 적용하고 싶다면 */
+body {
+  font-family: 'SUITE-Regular', sans-serif;
+}
+
+/* 또는 특정 요소에만 적용하고 싶다면 */
+.your-class {
+  font-family: 'SUITE-Regular', sans-serif;
 }

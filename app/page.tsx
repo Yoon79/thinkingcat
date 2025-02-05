@@ -40,23 +40,27 @@ const Home: React.FC = () => {
                   className="text-center w-10 h-10"
                 />
               </div>
-              <div className="text-4xl">띵킹캣</div>
+              <div className="text-center text-4xl">띵킹캣</div>
+              <div className="text-center text-base">Thinking Cat</div>
             </div>
 
             <nav className="flex w-full justify-around">
-              <div className="scroll-smooth">
+              <div className="text-center">
                 <a href="#projects" className="text-2xl">
                   프로젝트
+                <p className="text-base">Project</p>
                 </a>
               </div>
-              <div className="scroll-smooth">
+              <div className="text-center ">
                 <a href="#about" className="text-2xl">
                   소개
+                  <p className="text-base">About</p>
                 </a>
               </div>
-              <div className="scroll-smooth">
+              <div className="text-center">
                 <a href="#contact" className="text-2xl">
                   문의
+                  <p className="text-base">Contact</p>
                 </a>
               </div>
             </nav>
@@ -74,6 +78,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center text-5xl mb-20">
                 프로젝트
+                <p className="text-xl">Project</p>
               </motion.h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -146,8 +151,9 @@ const Home: React.FC = () => {
           <section
             id="about"
             className="min-h-screen flex items-center justify-center">
-            <div className="container mx-auto p-4 text-white">
-              <h2 className="text-center text-5xl mb-20">소개</h2>
+            <div className="container text-center mx-auto p-4 text-white">
+              <h2 className="text-5xl">소개</h2>
+              <p className="text-xl  mb-20">About Us</p>
               <p className="text-center text-xl font-semibold">
                 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공
               </p>
@@ -157,8 +163,9 @@ const Home: React.FC = () => {
           <section
             id="contact"
             className="min-h-screen flex items-center justify-center">
-            <div className="container mx-auto p-4 text-white">
-              <h2 className="text-center text-5xl mb-8">문의</h2>
+            <div className="container text-center mx-auto p-4 text-white">
+              <h2 className="text-5xl">문의</h2>
+              <p className="text-xl mb-8">Contact</p>
               <div className="bg-black bg-opacity-50 p-8 rounded-lg max-w-2xl mx-auto">
                 {/*<p className="text-center text-xl mb-4">*/}
                 {/*  궁금한 점이 있으시거나 협력 문의는 아래 메일로 연락 주세요.*/}
@@ -180,7 +187,7 @@ const Home: React.FC = () => {
                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                       />
                     </svg>
-                    kokoseoul22@gmail.com
+                    thinkingcatworks@gmail.com
                   </a>
                 </div>
               </div>
