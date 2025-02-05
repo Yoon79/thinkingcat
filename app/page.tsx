@@ -41,7 +41,7 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="text-center text-4xl">띵킹캣</div>
-              <div className="text-center text-base">Thinking Cat</div>
+              <div className="text-center text-base">Thinking CAT</div>
             </div>
 
             <nav className="flex w-full justify-around">
@@ -167,13 +167,10 @@ const Home: React.FC = () => {
               <h2 className="text-5xl">문의</h2>
               <p className="text-xl mb-8">Contact</p>
               <div className="bg-black bg-opacity-50 p-8 rounded-lg max-w-2xl mx-auto">
-                {/*<p className="text-center text-xl mb-4">*/}
-                {/*  궁금한 점이 있으시거나 협력 문의는 아래 메일로 연락 주세요.*/}
-                {/*</p>*/}
                 <div className="flex items-center justify-center gap-4">
                   <a
-                    href="mailto:your.email@example.com"
-                    className="text-2xl hover:text-blue-400 transition-colors duration-300 flex items-center gap-2">
+                    href="mailto:thinkingcatworks@gmail.com"
+                    className="text-xl rainbow-hover transition-colors duration-300 flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -190,6 +187,12 @@ const Home: React.FC = () => {
                     thinkingcatworks@gmail.com
                   </a>
                 </div>
+                <div className="instagram-link text-xl rainbow-hover transition-colors duration-300">
+                  <a href="https://www.instagram.com/thinkingcatworks" target="_blank" rel="noopener noreferrer">
+                    <img src="/instagram.png" alt="Instagram" width="24" height="24" />
+                    Instagram
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -197,7 +200,7 @@ const Home: React.FC = () => {
 
         <footer className="relative bg-black bg-opacity-50 text-white p-4">
           <div className="container mx-auto text-center">
-            &copy; 2025 thinking CAT. All rights reserved.
+            &copy; 2025 thinkingCAT. All rights reserved.
           </div>
         </footer>
       </div>

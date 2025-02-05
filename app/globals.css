@@ -37,3 +37,52 @@ body {
 .your-class {
   font-family: 'SUITE-Regular', sans-serif;
 }
+
+.instagram-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.instagram-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  /* color: #333; */
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.instagram-link a:hover {
+  opacity: 0.8;
+}
+
+@keyframes rainbow {
+  0% {
+    color: #ffCA28;
+  }
+
+  20% {
+    color: #ff2C5A;
+  }
+
+  40% {
+    color: #972DEA;
+  }
+
+  60% {
+    color: #058EE2;
+  }
+
+  80% {
+    color: #03EDD2;
+  }
+
+  100% {
+    color: #797979;
+  }
+}
+
+.rainbow-hover:hover {
+  animation: rainbow 5s linear infinite;
+}
