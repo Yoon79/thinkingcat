@@ -44,17 +44,17 @@ const Home: React.FC = () => {
             </div>
 
             <nav className="flex w-full justify-around">
-              <div className="">
+              <div className="scroll-smooth">
                 <a href="#projects" className="text-2xl">
                   프로젝트
                 </a>
               </div>
-              <div className="">
+              <div className="scroll-smooth">
                 <a href="#about" className="text-2xl">
                   소개
                 </a>
               </div>
-              <div className="">
+              <div className="scroll-smooth">
                 <a href="#contact" className="text-2xl">
                   문의
                 </a>
