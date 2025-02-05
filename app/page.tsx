@@ -3,9 +3,24 @@
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
-// import Header from "@/components/Header";
+import { useState, useEffect } from 'react';
 
 const Home: React.FC = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > window.innerHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gray-100">
       <Head>
@@ -48,7 +63,7 @@ const Home: React.FC = () => {
               <div className="text-center">
                 <a href="#projects" className="text-2xl">
                   프로젝트
-                <p className="text-base">Project</p>
+                <p className="text-base">Projects</p>
                 </a>
               </div>
               <div className="text-center ">
@@ -78,7 +93,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center text-5xl mb-20">
                 프로젝트
-                <p className="text-xl">Project</p>
+                <p className="text-xl">Projects</p>
               </motion.h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -100,7 +115,10 @@ const Home: React.FC = () => {
                       className="w-60 h-60 object-contain"
                     />
                   </div>
-                  <div className="mt-4 text-center">프로젝트 설명</div>
+                  <div className="mt-4 text-center">
+                    <p>혁신적인 기획으로</p>
+                    <p>새로운 형태의 소셜 네트워크 개발</p>
+                     </div>
                 </motion.div>
 
                 <motion.div
@@ -110,7 +128,7 @@ const Home: React.FC = () => {
                   whileHover={{ scale: 1.08 }}
                   className="bg-black bg-opacity-50 p-6 rounded-lg">
                   <h3 className="text-center text-2xl mb-4">
-                    식물 커뮤니티 및 쇼핑몰
+                    식물 쇼핑몰 및 커뮤니티
                   </h3>
                   <div className="flex justify-center">
                     <Image
@@ -121,7 +139,10 @@ const Home: React.FC = () => {
                       className="w-60 h-60 object-contain"
                     />
                   </div>
-                  <div className="mt-4 text-center">프로젝트 설명</div>
+                  <div className="mt-4 text-center">
+                    <p>최신 기술이 적용된 대규모</p>
+                    <p>식물 쇼핑몰 및 커뮤니티 개발</p>
+                     </div>
                 </motion.div>
 
                 <motion.div
@@ -142,7 +163,10 @@ const Home: React.FC = () => {
                       className="w-60 h-60 object-contain"
                     />
                   </div>
-                  <div className="mt-4 text-center">프로젝트 설명</div>
+                  <div className="mt-4 text-center">
+                    <p>스마트한 전산화로</p>
+                    <p> 편리, 효율, 정확성까지 실현</p>
+                     </div>
                 </motion.div>
               </div>
             </div>
@@ -155,7 +179,7 @@ const Home: React.FC = () => {
               <h2 className="text-5xl">소개</h2>
               <p className="text-xl  mb-20">About Us</p>
               <p className="text-center text-xl font-semibold">
-                소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공
+                소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
               </p>
             </div>
           </section>
@@ -198,11 +222,33 @@ const Home: React.FC = () => {
           </section>
         </main>
 
-        <footer className="relative bg-black bg-opacity-50 text-white p-4">
+        <footer className="relative bg-black bg-opacity-50 text-white p-2">
           <div className="container mx-auto text-center">
             &copy; 2025 thinkingCAT. All rights reserved.
           </div>
         </footer>
+
+        {showScrollTop && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-12 right-4 bg-black bg-opacity-50 text-white p-4 rounded-full shadow-lg hover:bg-opacity-70 transition-all duration-300 z-50"
+            aria-label="Scroll to top"
+          >
+            <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            strokeWidth="1.5" 
+            stroke="currentColor" 
+            className="h-6 w-6">
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2}
+                d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+          </svg>
+          </button>
+        )}
       </div>
     </div>
   );
