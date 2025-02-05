@@ -160,9 +160,9 @@ const Home: React.FC = () => {
             <div className="container mx-auto p-4 text-white">
               <h2 className="text-center text-5xl mb-8">문의</h2>
               <div className="bg-black bg-opacity-50 p-8 rounded-lg max-w-2xl mx-auto">
-                <p className="text-center text-xl mb-4">
-                  궁금한 점이 있으시거나 협력 문의는 아래 메일로 연락 주세요.
-                </p>
+                {/*<p className="text-center text-xl mb-4">*/}
+                {/*  궁금한 점이 있으시거나 협력 문의는 아래 메일로 연락 주세요.*/}
+                {/*</p>*/}
                 <div className="flex items-center justify-center gap-4">
                   <a
                     href="mailto:your.email@example.com"
@@ -183,9 +183,6 @@ const Home: React.FC = () => {
                     kokoseoul22@gmail.com
                   </a>
                 </div>
-                {/* <p className="text-sm mt-4 text-center text-gray-300">
-                  평일 오전 9시 ~ 오후 7시 이내 답변 드리겠습니다.
-                </p> */}
               </div>
             </div>
           </section>
