@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "띵킹캣 thinking CAT",
-  description: "앱 ・ 프로그램 개발",
+  title: "띵킹캣",
+  description: "앱 ・ 프로그램 개발 전문 기업",
 };
 
 export default function RootLayout({
