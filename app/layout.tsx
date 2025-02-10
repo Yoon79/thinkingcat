@@ -1,21 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// export const metadata: Metadata = {
-//   title: "띵킹캣",
-//   description: "앱 ・ 프로그램 개발 전문 기업",
-// };
 
 export const metadata: Metadata = {
   title: '띵킹캣 | 앱 ・ 프로그램 개발 전문 기업',
@@ -42,7 +26,7 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     images: [
       {
-        url: '/thinkingcat.png',
+        url: 'https://imagedelivery.net/XFfVvOueFmZxIJrF5kfmFw/c625c966-1258-4c38-8460-31ffd9946900/public',
         width: 600,
         height: 600,
         alt: '띵킹캣 로고',
@@ -69,7 +53,7 @@ export default function RootLayout({
     <html lang="ko">
       <body
       suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className="antialiased">
         {children}
       </body>
     </html>

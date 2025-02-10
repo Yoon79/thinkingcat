@@ -34,7 +34,7 @@ const Home: React.FC = () => {
         <meta property="og:title" content="띵킹캣 - 앱개발 및 프로그램 개발 전문 기업" />
         <meta property="og:description" content="띵킹캣은 혁신적인 앱 개발과 프로그램 개발을 전문으로 하는 기업입니다." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/thinkingcat.png" />
+        <meta property="og:image" content="https://imagedelivery.net/XFfVvOueFmZxIJrF5kfmFw/c625c966-1258-4c38-8460-31ffd9946900/public" />
         <meta property="og:url" content="https://www.thinkingcatworks.com/" />
         
         {/* 기타 메타 태그 */}
