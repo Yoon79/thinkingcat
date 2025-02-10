@@ -97,6 +97,7 @@ const Home: React.FC = () => {
         </header>
 
         <main className="relative">
+        <h1 className="sr-only">띵킹캣 - 앱 ・ 프로그램 개발 전문 기업</h1>
           <section
             id="projects"
             className="min-h-screen flex items-center justify-center z-10">

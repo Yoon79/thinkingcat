@@ -1,5 +1,11 @@
-# Allow all crawlers
 User-agent: *
 Allow: /
 
+# 구글봇 특별 설정
+User-agent: Googlebot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+
+# 사이트맵 위치
 Sitemap: https://www.thinkingcatworks.com/sitemap.xml
