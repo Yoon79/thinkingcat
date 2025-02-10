@@ -70,7 +70,7 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="text-center text-4xl">띵킹캣</div>
-              <div className="text-center text-base">Thinking CAT</div>
+              <div className="text-center text-base">thinkingcat</div>
             </div>
 
             <nav className="flex w-full justify-around">
@@ -101,14 +101,14 @@ const Home: React.FC = () => {
             id="projects"
             className="min-h-screen flex items-center justify-center z-10">
             <div className="container mx-auto p-4 text-white">
-              <motion.h2
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 className="text-center text-5xl mb-20">
                 프로젝트
                 <p className="text-xl">Projects</p>
-              </motion.h2>
+              </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <motion.div
@@ -117,9 +117,9 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   whileHover={{ scale: 1.08 }}
                   className="bg-black bg-opacity-50 p-6 rounded-lg transform transition-transform">
-                  <h3 className="text-center text-2xl mb-4">
+                  <div className="text-center text-2xl mb-4">
                     소셜 네트워크 플랫폼
-                  </h3>
+                  </div>
                   <div className="flex justify-center">
                     <Image
                       src="/godsaeng.png"
@@ -141,9 +141,9 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   whileHover={{ scale: 1.08 }}
                   className="bg-black bg-opacity-50 p-6 rounded-lg">
-                  <h3 className="text-center text-2xl mb-4">
+                  <div className="text-center text-2xl mb-4">
                     식물 쇼핑몰 및 커뮤니티
-                  </h3>
+                  </div>
                   <div className="flex justify-center">
                     <Image
                       src="/pium.png"
@@ -165,9 +165,9 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   whileHover={{ scale: 1.08 }}
                   className="bg-black bg-opacity-50 p-6 rounded-lg">
-                  <h3 className="text-center text-2xl mb-4">
+                  <div className="text-center text-2xl mb-4">
                     동물원 관리 시스템
-                  </h3>
+                  </div>
                   <div className="flex justify-center">
                     <Image
                       src="/zootop.png"
@@ -190,7 +190,7 @@ const Home: React.FC = () => {
             id="about"
             className="min-h-screen flex items-center justify-center">
             <div className="container text-center mx-auto p-4 text-white">
-              <h2 className="text-5xl">소개</h2>
+              <div className="text-5xl">소개</div>
               <p className="text-xl  mb-20">About Us</p>
               <p className="text-center text-xl font-semibold">
                 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
@@ -202,7 +202,7 @@ const Home: React.FC = () => {
             id="contact"
             className="min-h-screen flex items-center justify-center">
             <div className="container text-center mx-auto p-4 text-white">
-              <h2 className="text-5xl">문의</h2>
+              <div className="text-5xl">문의</div>
               <p className="text-xl mb-8">Contact</p>
               <div className="bg-black bg-opacity-50 p-8 rounded-lg max-w-2xl mx-auto">
                 <div className="flex items-center justify-center gap-4">
@@ -238,7 +238,7 @@ const Home: React.FC = () => {
 
         <footer className="relative bg-black bg-opacity-50 text-white p-2">
           <div className="container mx-auto text-center">
-            &copy; 2025 thinkingCAT. All rights reserved.
+            &copy; 2025 thinkingcat. All rights reserved.
           </div>
         </footer>
 
