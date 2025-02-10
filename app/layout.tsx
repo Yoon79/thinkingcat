@@ -18,16 +18,16 @@ const geistMono = Geist_Mono({
 // };
 
 export const metadata: Metadata = {
-  title: '띵킹캣 - 앱개발 및 프로그램 개발 전문 기업',
+  title: '띵킹캣 - 앱 ・ 프로그램 개발 전문 기업',
   description: '띵킹캣은 혁신적인 앱 개발과 프로그램 개발을 전문으로 하는 기업입니다. 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다.',
   keywords: ['띵킹캣', 'thinking cat', 'thinkingcat', '앱개발', '프로그램개발', '소프트웨어개발', '모바일앱', '웹개발'],
-  authors: [{ name: 'ThinkingCAT' }],
+  authors: [{ name: 'thinkingcat' }],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: '띵킹캣 - 앱개발 및 프로그램 개발 전문 기업',
+    title: '띵킹캣 - 앱 및 프로그램 개발 전문 기업',
     description: '띵킹캣은 혁신적인 앱 개발과 프로그램 개발을 전문으로 하는 기업입니다.',
     type: 'website',
     url: 'https://www.thinkingcatworks.com/',
