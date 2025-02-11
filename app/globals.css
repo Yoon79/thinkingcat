@@ -86,3 +86,57 @@ body {
 .rainbow-hover:hover {
   animation: rainbow 5s linear infinite;
 }
+
+.modal-content {
+  user-select: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  height: 90vh;
+  max-width: 1200px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+/* Swiper 커스텀 스타일 */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
