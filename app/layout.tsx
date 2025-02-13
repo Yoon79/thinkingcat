@@ -57,6 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+    <body
+        suppressHydrationWarning={true}
+        className="antialiased">
+    {children}
     <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -64,10 +68,6 @@ export default function RootLayout({
           __html: JSON.stringify(jsonLd),
         }}
     />
-    <body
-      suppressHydrationWarning={true}
-        className="antialiased">
-        {children}
       </body>
     </html>
   );
