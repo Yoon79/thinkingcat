@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: '띵킹캣 | 앱 ・ 프로그램 개발 전문',
-  description: '띵킹캣은 혁신적인 앱 개발과 프로그램 개발을 전문으로 하는 기업입니다. 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다.',
+  description: '띵킹캣은 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다.',
   keywords: ['띵킹캣', 'thinking cat', 'thinkingcat', '앱개발', '프로그램개발', '소프트웨어개발', '모바일앱', '웹개발'],
   authors: [{ name: 'thinkingcat' }],
   robots: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
+      'max-snippet': 150,
     },
   },
   openGraph: {
