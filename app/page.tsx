@@ -4,39 +4,10 @@ import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
-import Modal from 'react-modal';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
-if (typeof window !== 'undefined') {
-  Modal.setAppElement('body');
-}
 
 const Home: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [currentProject, setCurrentProject] = useState<string | null>(null);
-  
-  const projectImages = {
-    godsaeng: [
-      '/godsaeng.png',
-      '/godsaeng2.png',
-      '/godsaeng3.png',
-    ],
-    pium: [
-      '/pium.png',
-      '/pium2.png',
-      '/pium3.png',
-    ],
-    zootop: [
-      '/zootop.png',
-      '/zootop2.png',
-      '/zootop3.png',
-    ],
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,17 +20,6 @@ const Home: React.FC = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleOpenModal = (project: string) => {
-    setCurrentProject(project);
-    setModalIsOpen(true);
-  };
-
-  const handleCloseModal = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setModalIsOpen(false);
-    setCurrentProject(null);
   };
 
   return (
@@ -157,8 +117,7 @@ const Home: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   whileHover={{ scale: 1.08 }}
-                  onClick={() => handleOpenModal('godsaeng')}
-                  className="bg-black bg-opacity-50 p-6 rounded-lg transform transition-transform cursor-pointer">
+                  className="bg-black bg-opacity-50 p-6 rounded-lg transform transition-transform">
                   <div className="text-center text-2xl mb-4">
                     소셜 네트워크 플랫폼
                   </div>
@@ -174,7 +133,7 @@ const Home: React.FC = () => {
                   <div className="mt-4 text-center">
                     <p>혁신적인 기획으로</p>
                     <p>새로운 형태의 소셜 네트워크 개발</p>
-                  </div>
+                     </div>
                 </motion.div>
 
                 <motion.div
@@ -182,8 +141,7 @@ const Home: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   whileHover={{ scale: 1.08 }}
-                  onClick={() => handleOpenModal('pium')}
-                  className="bg-black bg-opacity-50 p-6 rounded-lg transform transition-transform cursor-pointer">
+                  className="bg-black bg-opacity-50 p-6 rounded-lg">
                   <div className="text-center text-2xl mb-4">
                     식물 쇼핑몰 및 커뮤니티
                   </div>
@@ -199,7 +157,7 @@ const Home: React.FC = () => {
                   <div className="mt-4 text-center">
                     <p>최신 기술이 적용된 대규모</p>
                     <p>식물 쇼핑몰 및 커뮤니티 개발</p>
-                  </div>
+                     </div>
                 </motion.div>
 
                 <motion.div
@@ -207,8 +165,7 @@ const Home: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                   whileHover={{ scale: 1.08 }}
-                  onClick={() => handleOpenModal('zootop')}
-                  className="bg-black bg-opacity-50 p-6 rounded-lg transform transition-transform cursor-pointer">
+                  className="bg-black bg-opacity-50 p-6 rounded-lg">
                   <div className="text-center text-2xl mb-4">
                     동물원 관리 시스템
                   </div>
@@ -224,7 +181,7 @@ const Home: React.FC = () => {
                   <div className="mt-4 text-center">
                     <p>스마트한 전산화로</p>
                     <p> 편리, 효율, 정확성까지 실현</p>
-                  </div>
+                     </div>
                 </motion.div>
               </div>
             </div>
@@ -308,44 +265,6 @@ const Home: React.FC = () => {
           </button>
         )}
       </div>
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={handleCloseModal}
-        className="modal-content"
-        overlayClassName="modal-overlay"
-        ariaHideApp={false}
-        shouldCloseOnOverlayClick={true}
-      >
-        <button 
-          onClick={handleCloseModal}
-          className="absolute top-4 right-4 text-white text-3xl z-50 bg-black bg-opacity-50 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all"
-        >
-          ×
-        </button>
-        <div onClick={(e) => e.stopPropagation()} className="w-full h-full flex items-center justify-center">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            navigation
-            pagination={{ clickable: true }}
-            className="h-full w-full"
-          >
-            {currentProject && projectImages[currentProject as keyof typeof projectImages].map((image, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex items-center justify-center h-full">
-                  <Image
-                    src={image}
-                    alt={`${currentProject} screenshot ${index + 1}`}
-                    width={800}
-                    height={600}
-                    className="max-h-[80vh] w-auto object-contain"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </Modal>
     </div>
   );
 };
