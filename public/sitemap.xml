@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 메인 페이지 -->
+
   <url>
     <loc>https://www.thinkingcatworks.com/</loc>
     <lastmod>2024-03-21</lastmod>
@@ -8,7 +8,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- 프로젝트 섹션 -->
   <url>
     <loc>https://www.thinkingcatworks.com/#projects</loc>
     <lastmod>2024-03-21</lastmod>
@@ -16,7 +15,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 소개 섹션 -->
   <url>
     <loc>https://www.thinkingcatworks.com/#about</loc>
     <lastmod>2024-03-21</lastmod>
@@ -24,7 +22,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 문의 섹션 -->
   <url>
     <loc>https://www.thinkingcatworks.com/#contact</loc>
     <lastmod>2024-03-21</lastmod>

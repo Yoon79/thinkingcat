@@ -6,7 +6,23 @@ const jsonLd = {
   '@type': 'WebSite',
   name: '띵킹캣',
   description: '소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다.',
-  url: 'https://www.thinkingcatworks.com/',
+  url: 'https://www.thinkingcatworks.com/',hasPart: [
+    {
+      '@type': 'SiteNavigationElement',
+      name: '프로젝트',
+      url: 'https://www.thinkingcatworks.com/#projects',
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      name: '소개',
+      url: 'https://www.thinkingcatworks.com/#about',
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      name: '문의하기',
+      url: 'https://www.thinkingcatworks.com/#contact',
+    },
+  ],
 };
 
 

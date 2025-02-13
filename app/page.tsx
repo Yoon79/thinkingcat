@@ -75,24 +75,18 @@ const Home: React.FC = () => {
             </div>
 
             <nav className="flex w-full justify-around">
-              <div className="text-center">
-                <a href="#projects" className="text-2xl">
+                <a href="#projects" className="text-center text-2xl">
                   프로젝트
                 <p className="text-base">Projects</p>
                 </a>
-              </div>
-              <div className="text-center ">
-                <a href="#about" className="text-2xl">
+                <a href="#about" className="text-center text-2xl">
                   소개
                   <p className="text-base">About</p>
                 </a>
-              </div>
-              <div className="text-center">
-                <a href="#contact" className="text-2xl">
+                <a href="#contact" className="text-center text-2xl">
                   문의
                   <p className="text-base">Contact</p>
                 </a>
-              </div>
             </nav>
           </div>
         </header>
