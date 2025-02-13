@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 
 const Home: React.FC = () => {
@@ -69,7 +70,7 @@ const Home: React.FC = () => {
                   className="text-center w-10 h-10"
                 />
               </div>
-              <div className="text-center text-4xl">띵킹캣</div>
+              <div className="text-center text-4xl neon-text">띵킹캣</div>
               <div className="text-center text-base">thinkingcat</div>
             </div>
 
@@ -97,115 +98,168 @@ const Home: React.FC = () => {
         </header>
 
         <main className="relative">
-        <h1 className="sr-only">띵킹캣 - 앱 ・ 프로그램 개발 전문 기업</h1>
-          <section
-            id="projects"
-            className="min-h-screen flex items-center justify-center z-10">
-            <div className="container mx-auto p-4 text-white">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-center text-5xl mb-20">
-                프로젝트
-                <p className="text-xl">Projects</p>
-              </motion.div>
+  <section
+    id="projects"
+    className="min-h-screen flex items-center justify-center z-10 relative overflow-hidden bg-[#0A0A1B]"
+  >
+    {/* 동적 배경 효과 */}
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(75,192,200,0.2),transparent_40%)]" />
+      <div className="absolute inset-0 bg-gradient-radial-dots" />
+    </div>
+    
+    {/* 움직이는 라인 효과 */}
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 cyber-grid" />
+      <div className="absolute inset-0 cyber-grid rotate-90" />
+    </div>
+    
+    {/* 글로우 효과, 메인 */}
+    <div className="container mx-auto p-4 text-white relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center text-5xl mb-20 neon-text"
+      >
+        프로젝트
+        <p className="text-xl mt-2 text-cyan-400">Projects</p>
+      </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  whileHover={{ scale: 1.08 }}
-                  className="bg-black bg-opacity-50 p-6 rounded-lg transform transition-transform">
-                  <div className="text-center text-2xl mb-4">
-                    소셜 네트워크 플랫폼
-                  </div>
-                  <div className="flex justify-center">
-                    <Image
-                      src="/godsaeng.png"
-                      alt="godsaeng"
-                      width={100}
-                      height={100}
-                      className="w-60 h-60 object-contain"
-                    />
-                  </div>
-                  <div className="mt-4 text-center">
-                    <p>혁신적인 기획으로</p>
-                    <p>새로운 형태의 소셜 네트워크 개발</p>
-                     </div>
-                </motion.div>
+                <Link href="/projects/godsaeng" className="block">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    whileHover={{ scale: 1.08 }}
+                    className="bg-black bg-opacity-50 p-6 rounded-lg transform transition-transform">
+                    <div className="text-center text-2xl mb-4">
+                      소셜 네트워크 플랫폼
+                    </div>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/godsaeng.png"
+                        alt="godsaeng"
+                        width={100}
+                        height={100}
+                        className="w-60 h-60 object-contain"
+                      />
+                    </div>
+                    <div className="mt-4 text-center">
+                      <p>혁신적인 기획으로</p>
+                      <p>새로운 형태의 소셜 네트워크 개발</p>
+                    </div>
+                  </motion.div>
+                </Link>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  whileHover={{ scale: 1.08 }}
-                  className="bg-black bg-opacity-50 p-6 rounded-lg">
-                  <div className="text-center text-2xl mb-4">
-                    식물 쇼핑몰 및 커뮤니티
-                  </div>
-                  <div className="flex justify-center">
-                    <Image
-                      src="/pium.png"
-                      alt="pium"
-                      width={100}
-                      height={100}
-                      className="w-60 h-60 object-contain"
-                    />
-                  </div>
-                  <div className="mt-4 text-center">
-                    <p>최신 기술이 적용된 대규모</p>
-                    <p>식물 쇼핑몰 및 커뮤니티 개발</p>
-                     </div>
-                </motion.div>
+                <Link href="/projects/pium" className="block">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    whileHover={{ scale: 1.08 }}
+                    className="bg-black bg-opacity-50 p-6 rounded-lg">
+                    <div className="text-center text-2xl mb-4">
+                      식물 쇼핑몰 및 커뮤니티
+                    </div>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/pium.png"
+                        alt="pium"
+                        width={100}
+                        height={100}
+                        className="w-60 h-60 object-contain"
+                      />
+                    </div>
+                    <div className="mt-4 text-center">
+                      <p>최신 기술이 적용된 대규모</p>
+                      <p>식물 쇼핑몰 및 커뮤니티 개발</p>
+                    </div>
+                  </motion.div>
+                </Link>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  whileHover={{ scale: 1.08 }}
-                  className="bg-black bg-opacity-50 p-6 rounded-lg">
-                  <div className="text-center text-2xl mb-4">
-                    동물원 관리 시스템
-                  </div>
-                  <div className="flex justify-center">
-                    <Image
-                      src="/zootop.png"
-                      alt="zootop"
-                      width={100}
-                      height={100}
-                      className="w-60 h-60 object-contain"
-                    />
-                  </div>
-                  <div className="mt-4 text-center">
-                    <p>스마트한 전산화로</p>
-                    <p> 편리, 효율, 정확성까지 실현</p>
-                     </div>
-                </motion.div>
+                <Link href="/projects/zootop" className="block">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    whileHover={{ scale: 1.08 }}
+                    className="bg-black bg-opacity-50 p-6 rounded-lg">
+                    <div className="text-center text-2xl mb-4">
+                      동물원 관리 시스템
+                    </div>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/zootop.png"
+                        alt="zootop"
+                        width={100}
+                        height={100}
+                        className="w-60 h-60 object-contain"
+                      />
+                    </div>
+                    <div className="mt-4 text-center">
+                      <p>스마트한 전산화로</p>
+                      <p>편리, 효율, 정확성까지 실현</p>
+                    </div>
+                  </motion.div>
+                </Link>
               </div>
             </div>
           </section>
 
           <section
-            id="about"
-            className="min-h-screen flex items-center justify-center">
-            <div className="container text-center mx-auto p-4 text-white">
-              <div className="text-5xl">소개</div>
-              <p className="text-xl  mb-20">About Us</p>
-              <p className="text-center text-xl font-semibold">
-                소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
-              </p>
-            </div>
-          </section>
+    id="about"
+    className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0D1117]"
+  >
+    {/* 홀로그램 스타일 배경 */}
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(66,138,245,0.15),transparent_70%)]" />
+      <div className="absolute inset-0 bg-matrix-rain opacity-10" />
+    </div>
+    
+    {/* 파티클 효과 */}
+    <div className="absolute inset-0 floating-particles" />
+    
+    <div className="container text-center mx-auto p-4 text-white relative z-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="space-y-8"
+      >
+        <div className="text-5xl neon-text-blue">소개</div>
+        <p className="text-xl text-blue-400 ">About Us</p>
+        <p className="text-center text-xl font-semibold glowing-text">
+          소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
+        </p>
+      </motion.div>
+    </div>
+  </section>
 
-          <section
-            id="contact"
-            className="min-h-screen flex items-center justify-center">
-            <div className="container text-center mx-auto p-4 text-white">
-              <div className="text-5xl">문의</div>
-              <p className="text-xl mb-8">Contact</p>
-              <div className="bg-black bg-opacity-50 p-8 rounded-lg max-w-2xl mx-auto">
+  <section
+    id="contact"
+    className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0A0A1B]"
+  >
+    {/* 사이버펑크 스타일 배경 */}
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-circuit-pattern" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A1B]/50 to-[#0A0A1B]" />
+    </div>
+    
+    {/* 글로우 라인 */}
+    <div className="absolute inset-0 cyber-lines" />
+    
+    <div className="container text-center mx-auto p-4 text-white relative z-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="text-5xl neon-text-purple">문의</div>
+        <p className="text-xl text-purple-400 mb-8">Contact</p>
+        <div className="bg-black/30 backdrop-blur-md p-8 rounded-lg max-w-2xl mx-auto border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
                 <div className="flex items-center justify-center gap-4">
                   <a
                     href="mailto:thinkingcatworks@gmail.com"
@@ -232,10 +286,11 @@ const Home: React.FC = () => {
                     Instagram
                   </a>
                 </div>
-              </div>
-            </div>
-          </section>
-        </main>
+                </div>
+      </motion.div>
+    </div>
+  </section>
+</main>
 
         <footer className="relative bg-black bg-opacity-50 text-white p-2">
           <div className="container mx-auto text-center">
