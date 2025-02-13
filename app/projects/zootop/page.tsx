@@ -36,7 +36,7 @@ export default function ZootopProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h1 className="text-5xl font-bold mb-4">동물원 관리 시스템</h1>
+            <h1 className="text-3xl font-bold mb-4">동물원 관리 시스템</h1>
             <p className="text-xl text-gray-300 mb-8">
               스마트한 전산화로 편리, 효율, 정확성까지 실현하는 동물원 관리 시스템
             </p>

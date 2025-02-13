@@ -36,7 +36,7 @@ export default function PiumProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h1 className="text-5xl font-bold mb-4">식물 쇼핑몰 및 커뮤니티</h1>
+            <h1 className="text-3xl font-bold mb-4">식물 쇼핑몰 및 커뮤니티</h1>
             <p className="text-xl text-gray-300 mb-8">
               최신 기술이 적용된 대규모 식물 쇼핑몰 및 커뮤니티를 만나보세요
             </p>
@@ -109,19 +109,19 @@ export default function PiumProject() {
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
                 <h3 className="text-xl font-semibold mb-3">커뮤니티</h3>
                 <p className="text-gray-300">
-                  식물 애호가들과 정보를 공유하고 소통할 수 있는 공간입니다.
+                  식집사들과 정보를 공유하고 소통할 수 있는 공간입니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
                 <h3 className="text-xl font-semibold mb-3">식물 케어 가이드</h3>
                 <p className="text-gray-300">
-                  각 식물별 맞춤 관리 방법과 팁을 제공합니다.
+                  식물별 맞춤 관리 방법과 팁을 제공합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">AI 식물 진단</h3>
+                <h3 className="text-xl font-semibold mb-3">식물 공구</h3>
                 <p className="text-gray-300">
-                  AI 기술을 활용한 식물 건강 진단 서비스를 제공합니다.
+                    희귀한 식물들을 연계된 농장에서 공수 해옵니다.
                 </p>
               </div>
             </div>

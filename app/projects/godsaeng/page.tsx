@@ -36,7 +36,7 @@ export default function GodsaengProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h1 className="text-5xl font-bold mb-4">소셜 네트워크 플랫폼</h1>
+            <h1 className="text-3xl font-bold mb-4">소셜 네트워크 플랫폼</h1>
             <p className="text-xl text-gray-300 mb-8">
               혁신적인 기획으로 새로운 형태의 소셜 네트워크를 만나보세요
             </p>
@@ -107,9 +107,9 @@ export default function GodsaengProject() {
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">실시간 메시징</h3>
+                <h3 className="text-xl font-semibold mb-3">실시간 댓글</h3>
                 <p className="text-gray-300">
-                  빠르고 안정적인 실시간 채팅으로 즉각적인 소통이 가능합니다.
+                  빠른 실시간 댓글로 즉각적인 소통이 가능합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
