@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '띵킹캣',
+  description: '소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다.',
+  url: 'https://www.thinkingcatworks.com/',
+};
+
+
 export const metadata: Metadata = {
   title: '띵킹캣 | 앱 ・ 프로그램 개발 전문',
   description: '띵킹캣은 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다.',
@@ -48,7 +57,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body
+    <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+    />
+    <body
       suppressHydrationWarning={true}
         className="antialiased">
         {children}
