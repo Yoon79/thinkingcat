@@ -40,8 +40,9 @@ const Home: React.FC = () => {
         
         {/* 기타 메타 태그 */}
         <meta name="robots" content="index,follow" />
-        <meta name="author" content="ThinkingCAT" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="author" content="thinkingcat" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
 
       <div className="relative">
