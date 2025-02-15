@@ -27,7 +27,6 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-gray-100">
       <Head>
         <title>띵킹캣</title>
-        {/* <title>띵킹캣 - 앱개발 및 프로그램 개발 전문 기업</title> */}
         <meta name="description" content="띵킹캣은 혁신적인 앱 개발과 프로그램 개발을 전문으로 하는 기업입니다. 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다." />
         <meta name="keywords" content="띵킹캣, thinking cat, thinkingcat, 앱개발, 프로그램개발, 소프트웨어개발, 모바일앱, 웹개발" />
         
@@ -136,7 +135,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/godsaeng.png"
-                        alt="godsaeng"
+                        alt="갓생"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"
@@ -162,7 +161,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/pium.png"
-                        alt="pium"
+                        alt="식물사이트"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"
