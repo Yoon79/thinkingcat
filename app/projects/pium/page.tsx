@@ -36,7 +36,7 @@ export default function PiumProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h1 className="text-3xl font-bold mb-4">식물 쇼핑몰 및 커뮤니티</h1>
+            <div className="text-3xl font-bold mb-4">식물 쇼핑몰 및 커뮤니티</div>
             <p className="text-xl text-gray-300 mb-8">
               최신 기술이 적용된 대규모 식물 쇼핑몰 및 커뮤니티를 만나보세요
             </p>
@@ -98,28 +98,28 @@ export default function PiumProject() {
 
           {/* 앱 설명 */}
           <div className="mt-20 text-left max-w-3xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-6">주요 기능</h2>
+            <div className="text-2xl font-semibold mb-6">주요 기능</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">식물 쇼핑</h3>
+                <div className="text-xl font-semibold mb-3">식물 쇼핑</div>
                 <p className="text-gray-300">
                   다양한 식물과 관련 용품을 쉽고 편리하게 구매할 수 있습니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">커뮤니티</h3>
+                <div className="text-xl font-semibold mb-3">커뮤니티</div>
                 <p className="text-gray-300">
                   식집사들과 정보를 공유하고 소통할 수 있는 공간입니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">식물 케어 가이드</h3>
+                <div className="text-xl font-semibold mb-3">식물 케어 가이드</div>
                 <p className="text-gray-300">
                   식물별 맞춤 관리 방법과 팁을 제공합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">식물 공구</h3>
+                <div className="text-xl font-semibold mb-3">식물 공구</div>
                 <p className="text-gray-300">
                     희귀한 식물들을 연계된 농장에서 공수 해옵니다.
                 </p>

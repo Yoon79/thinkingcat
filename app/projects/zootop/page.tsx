@@ -36,7 +36,7 @@ export default function ZootopProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h1 className="text-3xl font-bold mb-4">동물원 관리 시스템</h1>
+            <div className="text-3xl font-bold mb-4">동물원 관리 시스템</div>
             <p className="text-xl text-gray-300 mb-8">
               스마트한 전산화로 편리, 효율, 정확성까지 실현하는 동물원 관리 시스템
             </p>
@@ -98,28 +98,28 @@ export default function ZootopProject() {
 
           {/* 앱 설명 */}
           <div className="mt-20 text-left max-w-3xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-6">주요 기능</h2>
+            <div className="text-2xl font-semibold mb-6">주요 기능</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">동물 관리</h3>
+                <div className="text-xl font-semibold mb-3">동물 관리</div>
                 <p className="text-gray-300">
                   개체별 건강 상태, 급여 기록, 행동 패턴을 체계적으로 관리합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">시설 관리</h3>
+                <div className="text-xl font-semibold mb-3">시설 관리</div>
                 <p className="text-gray-300">
                   시설물 상태 점검 및 유지보수 일정을 효율적으로 관리합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">인력 관리</h3>
+                <div className="text-xl font-semibold mb-3">인력 관리</div>
                 <p className="text-gray-300">
                   직원 스케줄링과 업무 분배를 최적화하여 운영 효율을 높입니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">데이터 분석</h3>
+                <div className="text-xl font-semibold mb-3">데이터 분석</div>
                 <p className="text-gray-300">
                   수집된 데이터를 분석하여 의사결정을 지원하고 운영을 개선합니다.
                 </p>
