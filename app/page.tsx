@@ -70,7 +70,11 @@ const Home: React.FC = () => {
                   className="text-center w-10 h-10"
                 />
               </div>
-              <div className="text-center text-4xl neon-text">띵킹캣</div>
+              <div className="text-3xl font-bold relative group perspective-text">
+  <span className="block cyber-glitch-1">띵킹캣</span>
+  <span className="block cyber-glitch-2" aria-hidden="true">띵킹캣</span>
+  <span className="block cyber-glitch-3" aria-hidden="true">띵킹캣</span>
+</div>
               <div className="text-center text-base">thinkingcat</div>
             </div>
 
@@ -145,6 +149,7 @@ const Home: React.FC = () => {
                       <p>혁신적인 기획으로</p>
                       <p>새로운 형태의 소셜 네트워크 개발</p>
                     </div>
+                    <div className='mt-4 items-center rounded-full flex justify-center text-center h-6 w-20 mx-auto px-1 neon-text border border-0.5'>띵킹캣</div>
                   </motion.div>
                 </Link>
 
@@ -171,6 +176,11 @@ const Home: React.FC = () => {
                       <p>최신 기술이 적용된 대규모</p>
                       <p>식물 쇼핑몰 및 커뮤니티 개발</p>
                     </div>
+                    <div className='mt-4 flex items-center justify-center gap-2'>
+                      <div className='items-center rounded-full flex justify-center text-center h-6 w-20 px-1 neon-text border border-0.5'>피움뜰</div> 
+                       <div >X</div>
+                      <div className='items-center rounded-full flex justify-center text-center h-6 w-20 px-1 neon-text border border-0.5'>띵킹캣</div>
+                      </div>
                   </motion.div>
                 </Link>
 
@@ -196,6 +206,11 @@ const Home: React.FC = () => {
                     <div className="mt-4 text-center">
                       <p>스마트한 전산화로</p>
                       <p>편리, 효율, 정확성까지 실현</p>
+                    </div>
+                    <div className='mt-4 flex items-center justify-center gap-2'>
+                      <div className='items-center rounded-full flex justify-center text-center h-6 w-20 px-1 neon-text border border-0.5 text-[12px]'>쌍둥이동물원</div> 
+                      <div>X</div>
+                      <div className='items-center rounded-full flex justify-center text-center h-6 w-20 px-1 neon-text border border-0.5'>띵킹캣</div>
                     </div>
                   </motion.div>
                 </Link>

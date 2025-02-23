@@ -596,3 +596,100 @@ body {
     filter: brightness(1.2);
   }
 }
+
+.perspective-text {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.cyber-glitch-1 {
+  color: white;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(66, 138, 245, 0.8),
+    0 0 30px rgba(66, 138, 245, 0.6);
+  animation: cyber-glitch 3s infinite;
+}
+
+.cyber-glitch-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #0ff;
+  opacity: 0.5;
+  filter: blur(1px);
+  transform: translate3d(-2px, 2px, 0);
+  animation: cyber-glitch-2 4s infinite;
+}
+
+.cyber-glitch-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #f0f;
+  opacity: 0.5;
+  filter: blur(1px);
+  transform: translate3d(2px, -2px, 0);
+  animation: cyber-glitch-3 4s infinite;
+}
+
+@keyframes cyber-glitch {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(-1px, 1px, 0);
+  }
+
+  40% {
+    transform: translate3d(1px, -1px, 0);
+  }
+
+  60% {
+    transform: translate3d(-1px, -1px, 0);
+  }
+
+  80% {
+    transform: translate3d(1px, 1px, 0);
+  }
+}
+
+@keyframes cyber-glitch-2 {
+
+  0%,
+  100% {
+    transform: translate3d(-2px, 2px, 0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate3d(1px, -1px, 0);
+    opacity: 0.3;
+  }
+}
+
+@keyframes cyber-glitch-3 {
+
+  0%,
+  100% {
+    transform: translate3d(2px, -2px, 0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate3d(-1px, 1px, 0);
+    opacity: 0.3;
+  }
+}
+
+.perspective-text:hover .cyber-glitch-1 {
+  animation: cyber-glitch 0.5s infinite;
+}
+
+.perspective-text:hover .cyber-glitch-2,
+.perspective-text:hover .cyber-glitch-3 {
+  animation-duration: 0.5s;
+}
