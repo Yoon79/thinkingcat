@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 hover:cursor-default">
       <Head>
         <title>띵킹캣</title>
         <meta name="description" content="띵킹캣은 혁신적인 앱 개발과 프로그램 개발을 전문으로 하는 기업입니다. 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다." />
@@ -71,10 +71,10 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="text-3xl font-bold relative group perspective-text">
-  <span className="block cyber-glitch-1">띵킹캣</span>
-  <span className="block cyber-glitch-2" aria-hidden="true">띵킹캣</span>
-  <span className="block cyber-glitch-3" aria-hidden="true">띵킹캣</span>
-</div>
+                <span className="block cyber-glitch-1">띵킹캣</span>
+                <span className="block cyber-glitch-2" aria-hidden="true">띵킹캣</span>
+                <span className="block cyber-glitch-3" aria-hidden="true">띵킹캣</span>
+              </div>
               <div className="text-center text-base">thinkingcat</div>
             </div>
 
