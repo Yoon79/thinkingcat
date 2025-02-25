@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ZootopProject() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-900 via-indigo-900 to-purple-900 text-white">
+    <div className="hover:cursor-default min-h-screen bg-gradient-to-b from-blue-900 via-indigo-900 to-purple-900 text-white">
       {/* 상단 네비게이션 */}
       <nav className="p-4">
         <Link 
@@ -99,7 +99,7 @@ export default function ZootopProject() {
           {/* 앱 설명 */}
           <div className="mt-20 text-left max-w-3xl mx-auto">
             <div className="text-2xl font-semibold mb-6">주요 기능</div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
                 <div className="text-xl font-semibold mb-3">동물 관리</div>
                 <p className="text-gray-300">
@@ -123,6 +123,83 @@ export default function ZootopProject() {
                 <p className="text-gray-300">
                   수집된 데이터를 분석하여 의사결정을 지원하고 운영을 개선합니다.
                 </p>
+              </div>
+            </div>
+
+            {/* 지원 섹션 */}
+            <div className="mt-20 border-t border-white/10 pt-10">
+              <div className="text-2xl font-semibold mb-6">지원</div>
+              <div className="bg-white bg-opacity-5 p-6 rounded-xl space-y-4">
+                <div className="flex items-center">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth={1.5} 
+                    stroke="currentColor" 
+                    className="w-5 h-5 mr-3 text-blue-400"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" 
+                    />
+                  </svg>
+                  <a 
+                    href="mailto:thinkingcatworks@gmail.com" 
+                    className="text-gray-300 hover:text-blue-300 transition-colors"
+                  >
+                    thinkingcatworks@gmail.com
+                  </a>
+                </div>
+                
+                <div className="flex items-center">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth={1.5} 
+                    stroke="currentColor" 
+                    className="w-5 h-5 mr-3 text-blue-400"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" 
+                    />
+                  </svg>
+                  <a 
+                    href="https://twin-zootopia.vercel.app/privacy" 
+                    target="_blank"
+                    className="text-gray-300 hover:text-blue-300 transition-colors"
+                  >
+                    개인정보처리방침
+                  </a>
+                </div>
+
+                {/* <div className="flex items-center">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth={1.5} 
+                    stroke="currentColor" 
+                    className="w-5 h-5 mr-3 text-blue-400"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" 
+                    />
+                  </svg>
+                  <a 
+                    href="/terms-of-service" 
+                    target="_blank"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    서비스 이용약관
+                  </a>
+                </div> */}
               </div>
             </div>
           </div>
