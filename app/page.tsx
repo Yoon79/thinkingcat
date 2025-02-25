@@ -100,18 +100,15 @@ const Home: React.FC = () => {
     id="projects"
     className="min-h-screen flex items-center justify-center z-10 relative overflow-hidden bg-[#0A0A1B]"
   >
-    {/* 동적 배경 효과 */}
-    <div className="absolute inset-0">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_40%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(75,192,200,0.2),transparent_40%)]" />
-      <div className="absolute inset-0 bg-gradient-radial-dots" />
+
+      {/* 사이버펑크 스타일 배경 */}
+      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-circuit-pattern" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A1B]/50 to-[#0A0A1B]" />
     </div>
     
-    {/* 움직이는 라인 효과 */}
-    <div className="absolute inset-0">
-      <div className="absolute inset-0 cyber-grid" />
-      <div className="absolute inset-0 cyber-grid rotate-90" />
-    </div>
+    {/* 글로우 라인 */}
+    <div className="absolute inset-0 cyber-lines" />
     
     {/* 글로우 효과, 메인 */}
     <div className="container mx-auto p-4 text-white relative z-10">
@@ -119,7 +116,7 @@ const Home: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center text-5xl mb-20 neon-text"
+        className="text-center text-3xl mb-20 neon-text"
       >
         프로젝트
         <p className="text-xl mt-2 text-cyan-400">Projects</p>
@@ -236,10 +233,10 @@ const Home: React.FC = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="space-y-8"
+        className=""
       >
-        <div className="text-5xl neon-text-blue">소개</div>
-        <p className="text-xl text-blue-400 ">About Us</p>
+        <div className="text-3xl neon-text-blue">소개</div>
+        <p className="text-xl text-blue-400 pb-10">About Us</p>
         <p className="text-center text-xl font-semibold glowing-text">
           소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
         </p>
@@ -251,14 +248,19 @@ const Home: React.FC = () => {
     id="contact"
     className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0A0A1B]"
   >
-    {/* 사이버펑크 스타일 배경 */}
+    
+    {/* 동적 배경 효과 */}
     <div className="absolute inset-0">
-      <div className="absolute inset-0 bg-circuit-pattern" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A1B]/50 to-[#0A0A1B]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(75,192,200,0.2),transparent_40%)]" />
+      <div className="absolute inset-0 bg-gradient-radial-dots" />
     </div>
     
-    {/* 글로우 라인 */}
-    <div className="absolute inset-0 cyber-lines" />
+    {/* 움직이는 라인 효과 */}
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 cyber-grid" />
+      <div className="absolute inset-0 cyber-grid rotate-90" />
+    </div>
     
     <div className="container text-center mx-auto p-4 text-white relative z-10">
       <motion.div
@@ -266,7 +268,7 @@ const Home: React.FC = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="text-5xl neon-text-purple">문의</div>
+        <div className="text-3xl neon-text-purple">문의</div>
         <p className="text-xl text-purple-400 mb-8">Contact</p>
         <div className="bg-black/30 backdrop-blur-md p-8 rounded-lg max-w-2xl mx-auto border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
                 <div className="flex items-center justify-center gap-4">
