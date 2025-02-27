@@ -3,10 +3,16 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function ZootopProject() {
   return (
     <div className="hover:cursor-default min-h-screen bg-gradient-to-b from-blue-900 via-indigo-900 to-purple-900 text-white">
+      <Head>
+        <title>동물원 관리 시스템 by 띵킹캣</title>
+        <meta name="description" content="스마트한 전산화로 편리, 효율, 정확성까지 실현하는 동물원 관리 시스템" />
+      </Head>
+
       {/* 상단 네비게이션 */}
       <nav className="p-4">
         <Link 
@@ -31,7 +37,7 @@ export default function ZootopProject() {
           <div className="flex flex-col items-center justify-center mb-12">
             <Image
               src="/zootopiaicon.png"
-              alt="zootop icon"
+              alt="zoo management system icon"
               width={120}
               height={120}
               className="rounded-2xl shadow-lg mb-6"
@@ -51,7 +57,7 @@ export default function ZootopProject() {
               >
                 <Image
                   src="/google-play-badge.png"
-                  alt="Get it on Google Play"
+                  alt="Google Play badge"
                   width={200}
                   height={60}
                   className="h-[60px] w-auto"
@@ -65,7 +71,7 @@ export default function ZootopProject() {
               >
                 <Image
                   src="/app-store-badge.png"
-                  alt="Download on the App Store"
+                  alt="App Store badge"
                   width={200}
                   height={60}
                   className="h-[60px] w-auto"

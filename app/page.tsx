@@ -64,7 +64,7 @@ const Home: React.FC = () => {
               <div className="flex justify-center mb-2">
                 <Image
                   src="/thinkingcat.png"
-                  alt="cat icon"
+                  alt="thinkingcat icon"
                   width={100}
                   height={100}
                   className="text-center w-10 h-10"
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/godsaeng.png"
-                        alt="갓생"
+                        alt="godsaeng"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/pium.png"
-                        alt="식물사이트"
+                        alt="plant community"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"
@@ -194,7 +194,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/zootop.png"
-                        alt="zootop"
+                        alt="zoo management system"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"
@@ -293,7 +293,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="instagram-link text-xl rainbow-hover transition-colors duration-300">
                   <a href="https://www.instagram.com/thinkingcatworks" target="_blank" rel="noopener noreferrer">
-                    <img src="/instagram.png" alt="Instagram" width="24" height="24" />
+                    <img src="/instagram.png" alt="Instagram icon" width="24" height="24" />
                     Instagram
                   </a>
                 </div>

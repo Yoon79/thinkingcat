@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: 'https://imagedelivery.net/XFfVvOueFmZxIJrF5kfmFw/c625c966-1258-4c38-8460-31ffd9946900/public',
         width: 600,
         height: 600,
-        alt: '띵킹캣 로고',
+        alt: 'thinkingcat icon',
       },
     ],
   },

@@ -51,7 +51,7 @@ export default function PiumProject() {
               >
                 <Image
                   src="/google-play-badge.png"
-                  alt="Get it on Google Play"
+                  alt="Google Play badge"
                   width={200}
                   height={60}
                   className="h-[60px] w-auto"
@@ -65,7 +65,8 @@ export default function PiumProject() {
               >
                 <Image
                   src="/app-store-badge.png"
-                  alt="Download on the App Store"
+                  alt="App Store badge"
+                  alt="App Store badge"
                   width={200}
                   height={60}
                   className="h-[60px] w-auto"
