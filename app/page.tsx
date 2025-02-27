@@ -293,7 +293,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="instagram-link text-xl rainbow-hover transition-colors duration-300">
                   <a href="https://www.instagram.com/thinkingcatworks" target="_blank" rel="noopener noreferrer">
-                    <img src="/instagram.png" alt="Instagram icon" width="24" height="24" />
+                    <Image src="/instagram.png" alt="Instagram icon" width="24" height="24" />
                     Instagram
                   </a>
                 </div>

@@ -66,7 +66,6 @@ export default function PiumProject() {
                 <Image
                   src="/app-store-badge.png"
                   alt="App Store badge"
-                  alt="App Store badge"
                   width={200}
                   height={60}
                   className="h-[60px] w-auto"
