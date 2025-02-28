@@ -36,10 +36,10 @@ export default function PiumProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <div className="text-3xl font-bold mb-4">식물 쇼핑몰 및 커뮤니티</div>
-            <p className="text-xl text-gray-300 mb-8">
+            <h2 className="text-3xl font-bold mb-4">식물 쇼핑몰 및 커뮤니티</h2>
+            <div className="text-xl text-gray-300 mb-8">
               최신 기술이 적용된 대규모 식물 쇼핑몰 및 커뮤니티를 만나보세요
-            </p>
+            </div>
 
             {/* 앱스토어 링크 */}
             <div className="flex gap-4 justify-center">

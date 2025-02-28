@@ -35,13 +35,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': 150,
-    },
   },
   openGraph: {
     title: '띵킹캣 - 앱 ・ 프로그램 개발 전문',
@@ -55,7 +48,7 @@ export const metadata: Metadata = {
         url: 'https://imagedelivery.net/XFfVvOueFmZxIJrF5kfmFw/c625c966-1258-4c38-8460-31ffd9946900/public',
         width: 600,
         height: 600,
-        alt: 'thinkingcat icon',
+        alt: '띵킹캣 로고',
       },
     ],
   },
@@ -63,7 +56,7 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   alternates: {
-    canonical: 'https://www.thinkingcatworks.com/',
+    canonical: 'https://thinkingcatworks.com/',
   },
 }
 

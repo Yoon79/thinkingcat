@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/godsaeng.png"
-                        alt="godsaeng"
+                        alt="갓생러들"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/pium.png"
-                        alt="plant community"
+                        alt="피움뜰"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"
@@ -194,7 +194,7 @@ const Home: React.FC = () => {
                     <div className="flex justify-center">
                       <Image
                         src="/zootop.png"
-                        alt="zoo management system"
+                        alt="동물원 관리 시스템"
                         width={100}
                         height={100}
                         className="w-60 h-60 object-contain"

@@ -42,10 +42,10 @@ export default function ZootopProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <div className="text-3xl font-bold mb-4">동물원 관리 시스템</div>
-            <p className="text-xl text-gray-300 mb-8">
+            <h2 className="text-3xl font-bold mb-4">동물원 관리 시스템</h2>
+            <div className="text-xl text-gray-300 mb-8">
               스마트한 전산화로 편리, 효율, 정확성까지 실현하는 동물원 관리 시스템
-            </p>
+            </div>
 
             {/* 앱스토어 링크 */}
             <div className="flex gap-4 justify-center">
@@ -211,6 +211,19 @@ export default function ZootopProject() {
           </div>
         </motion.div>
       </div>
+      {/* <footer className="relative bg-black bg-opacity-50 text-white py-6">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center space-y-3">
+            <div className="text-sm text-gray-400">
+              <div className="font-medium mb-2">띵킹캣</div>
+              <div>서울특별시 강남구 테헤란로 501, 6층</div>
+            </div>
+            <div className="text-xs text-gray-500">
+              &copy; 2024 thinkingcat. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer> */}
     </div>
   );
 } 

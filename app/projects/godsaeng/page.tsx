@@ -36,10 +36,10 @@ export default function GodsaengProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <div className="text-3xl font-bold mb-4">소셜 네트워크 플랫폼</div>
-            <p className="text-xl text-gray-300 mb-8">
+            <h2 className="text-3xl font-bold mb-4">소셜 네트워크 플랫폼</h2>
+            <div className="text-xl text-gray-300 mb-8">
               혁신적인 기획으로 새로운 형태의 소셜 네트워크를 만나보세요
-            </p>
+            </div>
 
             {/* 앱스토어 링크 */}
             <div className="flex gap-4 justify-center">
