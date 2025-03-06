@@ -1,5 +1,7 @@
 import React from "react";
 
+
+// 안쓰고 있음
 const Header: React.FC = () => {
   return (
     <header className="bg-blue-600 text-white p-4">

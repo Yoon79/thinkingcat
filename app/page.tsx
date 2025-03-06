@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Footer from '@/Components/Footer';
 
 
 const Home: React.FC = () => {
@@ -302,12 +303,12 @@ const Home: React.FC = () => {
     </div>
   </section>
 </main>
-
-        <footer className="relative bg-black bg-opacity-50 text-white p-2">
+<Footer />
+        {/* <footer className="relative bg-black bg-opacity-50 text-white p-2">
           <div className="container mx-auto text-center">
             &copy; 2025 thinkingcat. All rights reserved.
           </div>
-        </footer>
+        </footer> */}
 
         {showScrollTop && (
           <button
