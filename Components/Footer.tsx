@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="relative z-10 bg-gray-900 text-white text-center">
+        <footer className="relative z-10 bg-black opacity-80 text-white text-center">
             <div className="mx-auto sm:ml-10">
                 <div className="pt-10 pb-10 sm:flex sm:justify-start">
                     <div className="text-base font-bold">띵킹캣</div>
