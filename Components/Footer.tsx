@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="relative z-10 bg-black opacity-80 text-white text-center">
+        <footer className="relative z-10 bg-black opacity-90 text-white text-center">
             <div className="mx-auto sm:ml-10">
                 <div className="pt-10 pb-10 sm:flex sm:justify-start">
                     <div className="text-base font-bold">띵킹캣</div>
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
 
                 <div className="flex justify-start">
                 <div className="pb-10 flex-col  text-sm text-gray-300 gap-4">
-                    <div className="flex ">
+                    <div className="flex sm:flex-col">
                     <div className="flex">
                         <p className="font-bold mr-1">대표</p>
                         <p className="mr-2">왕세윤</p>
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                         <p className="mr-2">thinkingcatworks@gmail.com</p>
                     </div>
                     </div>
-                    <div className="flex">
+                    <div className="flex sm:flex-col">
                     <div className="flex">
                         <p className="font-bold mr-1">사업자번호</p>
                         <p className="mr-2">826-14-02542</p>
@@ -37,7 +37,10 @@ const Footer: React.FC = () => {
                     <div className="flex">
                         <div className="flex">
                             <p className="font-bold mr-1">주소</p>
-                            <p className="mr-2">서울특별시 강남구 개포로15길 3-4, 지101호 A240호(개포동) </p>
+                            <div className="flex sm:flex-col">
+                            <p className="mr-1">서울특별시 강남구 개포로15길 3-4,</p>
+                            <p className="flex justify-start">지101호 A240호(개포동) </p>
+                            </div>
                         </div>
                     </div>
                 </div>
