@@ -64,7 +64,7 @@ export default function ZootopProject() {
                 />
               </a>
               <a 
-                href="https://apps.apple.com/app/your-zootop-id" 
+                href="https://apps.apple.com/kr/app/%EB%8F%99%EB%AC%BC%EC%9B%90%EA%B4%80%EB%A6%AC%EC%8B%9C%EC%8A%A4%ED%85%9C/id6742187071?l=en-GB"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"
