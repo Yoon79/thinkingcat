@@ -50,7 +50,7 @@ export default function ZootopProject() {
             {/* 앱스토어 링크 */}
             <div className="flex gap-4 justify-center">
               <a 
-                href="https://play.google.com/store/apps/details?id=com.kokoseoul.zootopia" 
+                href="https://play.google.com/store/apps/details?id=com.thinkingcat.zootopia&pcampaignid=web_share"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"
