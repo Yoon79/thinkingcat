@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, PanInfo } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
@@ -9,7 +9,7 @@ export default function PiumProject() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const constraintsRef = useRef(null);
+  // const constraintsRef = useRef(null);
   const screenshots = ['/pium1.png', '/pium2.png', '/pium3.png'];
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function PiumProject() {
     setIsAutoPlaying(false);
   };
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     setIsDragging(false);
     const swipeThreshold = 50;
     const swipe = info.offset.x;
