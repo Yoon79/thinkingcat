@@ -76,7 +76,7 @@ const About = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     {card.title}
                   </h3>
-                  <div className="h-0.5 w-12 bg-blue-500 mx-auto mb-4" />
+                  <div className="h-0.5 w-12 bg-[#1d0644] mx-auto mb-4" />
                   <p className="text-sm text-gray-600">
                     {card.description}
                   </p>

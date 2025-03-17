@@ -56,7 +56,7 @@ const Header = () => {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl font-bold text-gray-900 mb-4 relative text-center leading-relaxed "
+            className="text-4xl font-bold text-gray-900 mb-4 relative text-center leading-relaxed"
             whileHover={{ scale: 1.05 }}
           >
             <motion.span
@@ -95,7 +95,7 @@ const Header = () => {
           </motion.p> */}
 
           <motion.p 
-            className="text-lg text-gray-700 max-w-xl mx-auto text-center"
+            className="text-lg text-gray-700 max-w-xl mx-auto text-center leading-relaxed px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
