@@ -56,7 +56,7 @@ const Header = () => {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl font-bold text-gray-900 mb-4 relative text-center"
+            className="text-4xl font-bold text-gray-900 mb-4 relative text-center leading-relaxed "
             whileHover={{ scale: 1.05 }}
           >
             <motion.span
