@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                         <div className="gap-1">
                             <div className="flex gap-2">
                             <div className=""><Link href="/#projects" className="text-gray-300 font-bold hover:text-white transition">Projects</Link></div>
-                                <div className=""><Link href="/projects/godsaeng" className="text-gray-300 hover:text-white transition">갓생러들</Link></div>
+                                <div className=""><Link href="/projects/godsaeng" className="text-gray-300 hover:text-white transition">투두게더</Link></div>
                                 <div className=""><Link href="/projects/pium" className="text-gray-300 hover:text-white transition">피움뜰</Link></div>
                                 <div className=""><Link href="/projects/zootop" className="text-gray-300 hover:text-white transition">동물원관리시스템</Link></div>
 

@@ -25,7 +25,7 @@ const Projects = () => {
               <div className="flex justify-center">
                 <Image
                   src="/godsaeng.png"
-                  alt="갓생러들"
+                  alt="투두게더"
                   width={100}
                   height={100}
                   className="w-60 h-60 object-contain"
