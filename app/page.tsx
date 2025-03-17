@@ -6,7 +6,6 @@ import Projects from '@/Components/Projects';
 import About from '@/Components/About';
 import Contact from '@/Components/Contact';
 import Footer from '@/Components/Footer';
-import Promotion from '@/Components/Promotion';
 import ScrollToTop from '@/Components/ScrollToTop';
 
 const Home: React.FC = () => {
