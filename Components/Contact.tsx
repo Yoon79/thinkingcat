@@ -16,7 +16,7 @@ const Contact = () => {
           transition={{ duration: 1 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="bg-gray-50 p-8 rounded-lg border border-gray-100">
+          <div className="bg-gray-50 py-8 rounded-lg border border-gray-100">
             <div className="flex flex-col items-center gap-6">
               <a
                 href="mailto:thinkingcatworks@gmail.com"

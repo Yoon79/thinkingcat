@@ -18,7 +18,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               whileHover={{ y: -8 }}
-              className="bg-[#1d0644] bg-opacity-50 p-6 rounded-lg">
+              className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
               <div className="text-center text-2xl mb-4">
                 소셜 네트워크 플랫폼
               </div>
@@ -47,7 +47,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ scale: 1.08 }}
-              className="bg-[#1d0644] bg-opacity-50 p-6 rounded-lg">
+              className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
               <div className="text-center text-2xl mb-4">
                 식물 쇼핑몰 및 커뮤니티
               </div>
@@ -78,7 +78,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="bg-[#1d0644] bg-opacity-50 p-6 rounded-lg">
+              className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
               <div className="text-center text-2xl mb-4">
                 동물원 관리 시스템
               </div>
