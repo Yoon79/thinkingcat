@@ -20,7 +20,7 @@ const Contact = () => {
             <div className="flex flex-col items-center gap-6">
               <a
                 href="mailto:thinkingcatworks@gmail.com"
-                className="flex items-center gap-3 text-gray-900 hover:text-gray-600 transition-colors"
+                className="flex items-center gap-3 text-gray-900 hover:text-gray-600 rainbow-hover transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const Contact = () => {
                 href="https://www.instagram.com/thinkingcatworks"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-900 hover:text-gray-600 transition-colors"
+                className="flex items-center gap-3 text-gray-900 rainbow-hover hover:text-gray-600 transition-colors"
               >
                 <Image 
                   src="/instagram.png" 

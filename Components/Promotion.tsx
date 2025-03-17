@@ -21,9 +21,9 @@ const Promotion = () => {
   ];
 
   const stats = [
-    { number: "98%", label: "고객 만족도" },
-    { number: "50+", label: "성공 프로젝트" },
-    { number: "24/7", label: "기술 지원" }
+    { number: "4.9/5", label: "유저 만족도" },
+    { number: "90%", label: "재사용률" },
+    { number: "24시", label: "기술 지원" }
   ];
 
   return (
@@ -59,7 +59,7 @@ const Promotion = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-sm text-gray-600">
                 {feature.description}
               </p>
             </motion.div>

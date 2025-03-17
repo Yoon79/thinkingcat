@@ -77,7 +77,7 @@ const About = () => {
                     {card.title}
                   </h3>
                   <div className="h-0.5 w-12 bg-blue-500 mx-auto mb-4" />
-                  <p className="text-gray-600">
+                  <p className="text-sm text-gray-600">
                     {card.description}
                   </p>
                 </motion.div>
