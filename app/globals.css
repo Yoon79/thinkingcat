@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
 
@@ -30,10 +30,7 @@ body {
 /* 전체 페이지 */
 body {
   font-family: 'SUITE-Regular', sans-serif;
-
-
 }
-
 
 .instagram-link {
   margin-top: 20px;
@@ -463,7 +460,6 @@ body {
     0 0 30px rgba(66, 138, 245, 0.6);
   animation: neon-pulse 2s infinite;
 }
-
 
 .neon-text-blue {
   color: #4287f5;

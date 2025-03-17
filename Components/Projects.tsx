@@ -4,11 +4,39 @@ import Link from 'next/link';
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24 bg-black">
+      {/* 배경 애니메이션 효과 */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-blue-50 to-purple-50 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.15, 0.1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-purple-50 to-blue-50 rounded-full blur-3xl"
+        />
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">프로젝트</h2>
-          <p className="text-gray-600">Projects</p>
+          <h2 className="text-2xl font-bold text-gray-50 mb-2">프로젝트</h2>
+          <p className="text-gray-100">Projects</p>
         </div>
 
         <div className="text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -19,7 +47,7 @@ const Projects = () => {
               transition={{ duration: 0.6 }}
               whileHover={{ y: -8 }}
               className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
-              <div className="text-center text-2xl mb-4">
+              <div className="text-center text-xl mb-4">
                 소셜 네트워크 플랫폼
               </div>
               <div className="flex justify-center">
@@ -48,7 +76,7 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ scale: 1.08 }}
               className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
-              <div className="text-center text-2xl mb-4">
+              <div className="text-center text-xl mb-4">
                 식물 쇼핑몰 및 커뮤니티
               </div>
               <div className="flex justify-center">
@@ -79,7 +107,7 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               whileHover={{ scale: 1.08 }}
               className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
-              <div className="text-center text-2xl mb-4">
+              <div className="text-center text-xl mb-4">
                 동물원 관리 시스템
               </div>
               <div className="flex justify-center">

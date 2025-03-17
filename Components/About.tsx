@@ -33,11 +33,11 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-gray-50 overflow-hidden">
+    <section id="about" className="py-24 bg-black overflow-hidden">
       <div className="container mx-auto px-4 max-w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">소개</h2>
-          <p className="text-gray-600">About</p>
+          <h2 className="text-2xl font-bold text-gray-50 mb-2">소개</h2>
+          <p className="text-gray-100">About</p>
         </div>
 
         <motion.div
@@ -46,7 +46,7 @@ const About = () => {
           transition={{ duration: 1 }}
           className="max-w-3xl mx-auto text-center px-4"
         >
-          <p className="text-xl text-gray-700 leading-relaxed mb-8">
+          <p className="text-xl text-gray-100 leading-relaxed mb-8">
             소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
           </p>
           

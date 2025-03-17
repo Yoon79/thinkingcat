@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">문의</h2>
-          <p className="text-gray-600">Contact</p>
+          <h2 className="text-2xl font-bold text-gray-50 mb-2">문의</h2>
+          <p className="text-gray-100">Contact</p>
         </div>
 
         <motion.div
@@ -58,9 +58,9 @@ const Contact = () => {
 
             <div className="mt-8 pt-8 border-t border-gray-200">
               <p className="text-center text-gray-600">
-                언제든 편하게 연락주세요.
+                협업제안이나 문의사항이 있으시다면 연락주세요.
                 <br />
-                최선을 다해 답변 드리겠습니다.
+                24시간 안에 답변 드리겠습니다.
               </p>
             </div>
           </div>

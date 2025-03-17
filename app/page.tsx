@@ -11,7 +11,7 @@ import ScrollToTop from '@/Components/ScrollToTop';
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white hover:cursor-default">
+    <div className="min-h-screen flex flex-col bg-white hover:cursor-default">
       <Head>
         <title>띵킹캣</title>
         <meta name="description" content="띵킹캣은 혁신적인 앱 개발과 프로그램 개발을 전문으로 하는 기업입니다. 소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다." />
@@ -31,17 +31,17 @@ const Home: React.FC = () => {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
 
-      <div className="relative">
+      <div className="flex-grow">
         <Header />
-        <Promotion />
-        <main className="relative bg-white">
+        {/* <Promotion /> */}
+        <main className="flex-grow">
           <Projects />
           <About />
           <Contact />
         </main>
         <Footer />
-        <ScrollToTop />
       </div>
+      <ScrollToTop />
     </div>
   );
 };

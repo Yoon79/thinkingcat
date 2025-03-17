@@ -5,18 +5,15 @@ const Promotion = () => {
   const features = [
     {
       title: "혁신적인 기술력",
-      description: "최신 기술 스택과 효율적인 개발 프로세스로 고객의 니즈를 완벽하게 구현합니다.",
-      icon: "💡"
+      description: "최신 기술 스택과 효율적인 개발 프로세스로 고객의 니즈를 완벽하게 구현합니다."
     },
     {
       title: "검증된 실력",
-      description: "다양한 프로젝트 경험과 성공 사례로 입증된 개발 역량을 보유하고 있습니다.",
-      icon: "🏆"
+      description: "다양한 프로젝트 경험과 성공 사례로 입증된 개발 역량을 보유하고 있습니다."
     },
     {
       title: "맞춤형 솔루션",
-      description: "각 고객사의 특성과 요구사항을 분석하여 최적화된 솔루션을 제공합니다.",
-      icon: "🎯"
+      description: "각 고객사의 특성과 요구사항을 분석하여 최적화된 솔루션을 제공합니다."
     }
   ];
 
@@ -45,17 +42,31 @@ const Promotion = () => {
         </motion.div>
 
         {/* 특징 카드 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {features.map((feature, index) => (
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+        >
+          {features.map((feature) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -5 }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {feature.title}
               </h3>
@@ -64,7 +75,7 @@ const Promotion = () => {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* 통계 섹션 */}
         <motion.div

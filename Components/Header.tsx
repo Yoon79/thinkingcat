@@ -3,35 +3,20 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="relative h-screen bg-white overflow-hidden">
-      {/* 배경 애니메이션 효과 */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-blue-50 to-purple-50 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.15, 0.1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-purple-50 to-blue-50 rounded-full blur-3xl"
-        />
-      </div>
+    <header className="relative h-screen overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay to darken the video for better text visibility */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         <motion.div 
@@ -56,7 +41,7 @@ const Header = () => {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl font-bold text-gray-900 mb-4 relative text-center leading-relaxed"
+            className="text-4xl font-bold text-gray-100 mb-4 relative text-center leading-relaxed"
             whileHover={{ scale: 1.05 }}
           >
             <motion.span
@@ -95,7 +80,7 @@ const Header = () => {
           </motion.p> */}
 
           <motion.p 
-            className="text-lg text-gray-700 max-w-xl mx-auto text-center leading-relaxed px-4"
+            className="text-lg text-gray-100 max-w-xl mx-auto text-center leading-relaxed px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -126,10 +111,10 @@ const Header = () => {
                 className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
                 layoutId={`nav-bg-${item.id}`}
               />
-              <span className="relative text-lg text-gray-900 group-hover:text-gray-800">
+              <span className="relative font-bold text-xl text-gray-50 group-hover:text-gray-100">
                 {item.ko}
               </span>
-              <p className="relative text-sm text-gray-500 group-hover:text-gray-600">
+              <p className="relative text-gray-100 group-hover:text-gray-200">
                 {item.id.charAt(0).toUpperCase() + item.id.slice(1)}
               </p>
             </motion.a>
