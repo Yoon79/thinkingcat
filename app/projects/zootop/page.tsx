@@ -4,8 +4,60 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import { useState, useRef, useEffect } from 'react';
 
 export default function ZootopProject() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const constraintsRef = useRef(null);
+  const screenshots = ['/zootop1.png', '/zootop2.png', '/zootop3.png'];
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => 
+          prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 2000);
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isAutoPlaying, screenshots.length]);
+
+  const handleDragStart = () => {
+    setIsDragging(true);
+    setIsAutoPlaying(false);
+  };
+
+  const handleDragEnd = (event: any, info: any) => {
+    setIsDragging(false);
+    const swipeThreshold = 50;
+    const swipe = info.offset.x;
+    
+    if (Math.abs(swipe) > swipeThreshold) {
+      if (swipe > 0 && currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      } else if (swipe < 0) {
+        if (currentIndex === screenshots.length - 1) {
+          setCurrentIndex(0);
+        } else {
+          setCurrentIndex(currentIndex + 1);
+        }
+      }
+    }
+    
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 3000);
+  };
+
   return (
     <div className="hover:cursor-default min-h-screen bg-gradient-to-b from-blue-900 via-indigo-900 to-purple-900 text-white">
       <Head>
@@ -80,10 +132,11 @@ export default function ZootopProject() {
             </div>
           </div>
 
-          {/* 앱 스크린샷 */}
-          <div className="mt-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {['/zootop1.png', '/zootop2.png', '/zootop3.png'].map((img, index) => (
+           {/* 앱 스크린샷 */}
+           <div className="mt-20">
+            {/* 데스크톱 뷰 */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6">
+              {screenshots.map((img, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -99,6 +152,66 @@ export default function ZootopProject() {
                   />
                 </motion.div>
               ))}
+            </div>
+
+            {/* 모바일 스와이프 뷰 */}
+            <div className="md:hidden relative w-full overflow-x-hidden">
+              <div className="w-full px-8">
+                <motion.div
+                  drag="x"
+                  dragConstraints={{ left: -((screenshots.length - 1) * (280 + 32)), right: 0 }}
+                  dragElastic={0.1}
+                  dragMomentum={false}
+                  onDragEnd={handleDragEnd}
+                  onDragStart={handleDragStart}
+                  className="flex touch-pan-y"
+                  style={{ 
+                    transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 2}rem))`,
+                    transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+                    touchAction: 'pan-y pinch-zoom',
+                    width: 'fit-content',
+                  }}
+                >
+                  {screenshots.map((img, index) => (
+                    <div
+                      key={index}
+                      className="min-w-full w-full flex-shrink-0 flex justify-center relative select-none"
+                      style={{ 
+                        marginRight: '2rem',
+                        opacity: currentIndex === index ? 1 : 0.3,
+                        transition: 'all 0.3s ease',
+                        transform: `scale(${currentIndex === index ? 1 : 0.9})`,
+                      }}
+                    >
+                      <div className="relative w-full max-w-[280px]">
+                        <Image
+                          src={img}
+                          alt={`Screenshot ${index + 1}`}
+                          width={400}
+                          height={800}
+                          className="rounded-xl shadow-lg w-full h-auto object-contain"
+                          style={{ maxHeight: '70vh' }}
+                          draggable={false}
+                          priority
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* 페이지 인디케이터 */}
+              <div className="flex justify-center mt-4 gap-2">
+                {screenshots.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                      currentIndex === index ? 'bg-white' : 'bg-white/30'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
