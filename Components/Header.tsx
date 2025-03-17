@@ -95,7 +95,7 @@ const Header = () => {
           </motion.p> */}
 
           <motion.p 
-            className="text-lg text-gray-700 max-w-xl mx-auto text-center leading-relaxed"
+            className="text-lg text-gray-700 max-w-xl mx-auto text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -105,7 +105,7 @@ const Header = () => {
         </motion.div>
 
         <motion.nav 
-          className="flex gap-36"
+          className="flex gap-16 md:gap-36 lg:gap-36"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
