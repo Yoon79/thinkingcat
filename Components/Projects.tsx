@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-black">
       {/* 배경 애니메이션 효과 */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],

@@ -5,22 +5,22 @@ const Header = () => {
   return (
     <header className="relative h-screen overflow-hidden">
       {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute w-full h-full object-cover"
+        >
+          <source src="/background.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+      </div>
 
-      {/* Overlay to darken the video for better text visibility */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-
-      <div className="relative z-10 flex flex-col items-center justify-center h-full">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full max-w-full overflow-hidden">
         <motion.div 
-          className="flex-col items-center mb-20 text-center"
+          className="flex-col items-center mb-20 text-center px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -90,16 +90,12 @@ const Header = () => {
         </motion.div>
 
         <motion.nav 
-          className="flex gap-16 md:gap-36 lg:gap-36"
-          initial={{ opacity: 0, y: 20 }}
+          className="sm:hidden fixed top-0 left-0 w-full flex justify-around md:justify-center md:gap-24 bg-black bg-opacity-50 z-20 py-4 overflow-hidden"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          {[
-            { id: 'projects', ko: '프로젝트' },
-            { id: 'about', ko: '소개' },
-            { id: 'contact', ko: '문의' }
-          ].map((item) => (
+          {[{ id: 'projects', ko: '프로젝트' }, { id: 'about', ko: '소개' }, { id: 'contact', ko: '문의' }].map((item) => (
             <motion.a
               key={item.id}
               href={`#${item.id}`}
@@ -111,12 +107,9 @@ const Header = () => {
                 className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
                 layoutId={`nav-bg-${item.id}`}
               />
-              <span className="relative font-bold text-xl text-gray-50 group-hover:text-gray-100">
+              <span className="relative font-bold md:text-xl text-gray-50 group-hover:text-gray-100">
                 {item.ko}
               </span>
-              <p className="relative text-gray-100 group-hover:text-gray-200">
-                {item.id.charAt(0).toUpperCase() + item.id.slice(1)}
-              </p>
             </motion.a>
           ))}
         </motion.nav>

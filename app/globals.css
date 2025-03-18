@@ -18,6 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'SUITE-Regular', sans-serif, Arial, Helvetica;
+  overflow-x: hidden;
 }
 
 @font-face {
