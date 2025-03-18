@@ -71,7 +71,7 @@ const About = () => {
                 <motion.div
                   className="text-center"
                   whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400 }}
+                  transition={{ type: "spring", stiffness: 100 }}
                 >
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     {card.title}

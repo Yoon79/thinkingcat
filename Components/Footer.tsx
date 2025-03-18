@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="relative z-10 bg-[#1d0644] text-white text-center">
+        <footer className="relative z-10 bg-[#1d0644] bg-opacity-95 text-white text-center">
             <div className="mx-auto sm:ml-10">
                 <div className="pt-10 pb-10 sm:flex sm:justify-start">
                     <div className="text-base font-bold">띵킹캣</div>

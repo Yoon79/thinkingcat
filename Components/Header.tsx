@@ -90,7 +90,7 @@ const Header = () => {
         </motion.div>
 
         <motion.nav 
-          className="sm:hidden fixed top-0 left-0 w-full flex justify-around md:justify-center md:gap-24 bg-black bg-opacity-50 z-20 py-4 overflow-hidden"
+          className="top-0 left-0 w-full flex justify-around md:justify-center md:gap-32 z-20 py-4 overflow-hidden"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
