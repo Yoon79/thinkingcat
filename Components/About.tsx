@@ -36,7 +36,7 @@ const About = () => {
     <section id="about" className="py-24 bg-black overflow-hidden">
       <div className="container mx-auto px-4 max-w-full">
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-bold text-gray-50 mb-2">소개</h2>
+          <h2 className="text-2xl sm:text-xl font-bold text-gray-50 mb-2">소개</h2>
           <p className="text-gray-100">About</p>
         </div>
 
@@ -46,7 +46,7 @@ const About = () => {
           transition={{ duration: 1 }}
           className="max-w-3xl mx-auto text-center px-4"
         >
-          <p className="text-xl text-gray-100 leading-relaxed mb-8">
+          <p className="text-lg sm:text-base text-gray-100 leading-relaxed mb-8">
             소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
           </p>
           
@@ -54,7 +54,7 @@ const About = () => {
             {cards.map((card, index) => (
               <motion.div
                 key={card.title}
-                className="bg-white p-4 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-purple-50 p-4 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                 initial={getInitialPosition(card.direction)}
                 whileInView={{ x: 0, y: 0, opacity: 1 }}
                 transition={{
@@ -73,7 +73,7 @@ const About = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 100 }}
                 >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl sm:text-lg font-semibold text-gray-900 sm:mb-2 mb-4">
                     {card.title}
                   </h3>
                   <div className="h-0.5 w-12 bg-[#1d0644] mx-auto mb-4" />

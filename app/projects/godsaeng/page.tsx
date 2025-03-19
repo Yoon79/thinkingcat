@@ -88,8 +88,8 @@ export default function GodsaengProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h2 className="text-3xl font-bold mb-4">소셜 네트워크 플랫폼</h2>
-            <div className="text-xl text-gray-300 mb-8">
+            <h2 className="text-3xl sm:text-xl font-bold mb-4">소셜 네트워크 플랫폼</h2>
+            <div className="text-xl sm:text-base text-gray-300 mb-8">
               혁신적인 기획으로 새로운 형태의 소셜 네트워크를 만나보세요
             </div>
 
@@ -211,29 +211,29 @@ export default function GodsaengProject() {
 
           {/* 앱 설명 */}
           <div className="mt-20 text-left max-w-3xl mx-auto">
-            <div className="text-2xl font-semibold mb-6">주요 기능</div>
+            <div className="text-2xl sm:text-xl font-semibold mb-6">주요 기능</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">사용자 맞춤형 피드</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">사용자 맞춤형 피드</div>
+                <p className="text-gray-300 sm:text-sm">
                   AI 기반 추천 시스템으로 사용자의 관심사에 맞는 콘텐츠를 제공합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">실시간 댓글</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">실시간 댓글</div>
+                <p className="text-gray-300 sm:text-sm">
                   빠른 실시간 댓글로 즉각적인 소통이 가능합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">커뮤니티</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">커뮤니티</div>
+                <p className="text-gray-300 sm:text-sm">
                   다양한 주제의 커뮤니티에서 비슷한 관심사를 가진 사람들과 소통하세요.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">콘텐츠 공유</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">콘텐츠 공유</div>
+                <p className="text-gray-300 sm:text-sm">
                   다양한 형태의 콘텐츠를 쉽고 빠르게 공유할 수 있습니다.
                 </p>
               </div>

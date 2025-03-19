@@ -6,7 +6,7 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-bold text-gray-50 mb-2">문의</h2>
+          <h2 className="text-2xl sm:text-xl font-bold text-gray-50 mb-2">문의</h2>
           <p className="text-gray-100">Contact</p>
         </div>
 
@@ -16,7 +16,7 @@ const Contact = () => {
           transition={{ duration: 1 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="bg-gray-50 py-8 rounded-lg border border-gray-100">
+          <div className=" bg-purple-50 py-8 rounded-lg border border-gray-100">
             <div className="flex flex-col items-center gap-6">
               <a
                 href="mailto:thinkingcatworks@gmail.com"
@@ -56,7 +56,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-gray-200">
+            <div className="mt-8 pt-8 sm:text-sm border-t border-gray-200">
               <p className="text-center text-gray-600">
                 협업제안이나 문의사항이 있으시다면 연락주세요.
                 <br />

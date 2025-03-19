@@ -94,8 +94,8 @@ export default function ZootopProject() {
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h2 className="text-3xl font-bold mb-4">동물원 관리 시스템</h2>
-            <div className="text-xl text-gray-300 mb-8">
+            <h2 className="text-3xl sm:text-xl font-bold mb-4">동물원 관리 시스템</h2>
+            <div className="text-xl sm:text-base text-gray-300 mb-8">
               스마트한 전산화로 편리, 효율, 정확성까지 실현하는 동물원 관리 시스템
             </div>
 
@@ -217,29 +217,29 @@ export default function ZootopProject() {
 
           {/* 앱 설명 */}
           <div className="mt-20 text-left max-w-3xl mx-auto">
-            <div className="text-2xl font-semibold mb-6">주요 기능</div>
+            <div className="text-2xl sm:text-xl font-semibold mb-6">주요 기능</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">동물 관리</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">동물 관리</div>
+                <p className="text-gray-300 sm:text-sm">
                   개체별 건강 상태, 급여 기록, 행동 패턴을 체계적으로 관리합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">시설 관리</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">시설 관리</div>
+                <p className="text-gray-300 sm:text-sm">
                   시설물 상태 점검 및 유지보수 일정을 효율적으로 관리합니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">인력 관리</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">인력 관리</div>
+                <p className="text-gray-300 sm:text-sm">
                   직원 스케줄링과 업무 분배를 최적화하여 운영 효율을 높입니다.
                 </p>
               </div>
               <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl font-semibold mb-3">데이터 분석</div>
-                <p className="text-gray-300">
+                <div className="text-xl sm:text-lg font-semibold mb-3">데이터 분석</div>
+                <p className="text-gray-300 sm:text-sm">
                   수집된 데이터를 분석하여 의사결정을 지원하고 운영을 개선합니다.
                 </p>
               </div>
@@ -247,7 +247,7 @@ export default function ZootopProject() {
 
             {/* 지원 섹션 */}
             <div className="mt-20 border-t border-white/10 pt-10">
-              <div className="text-2xl font-semibold mb-6">지원</div>
+              <div className="text-2xl sm:text-xl font-semibold mb-6">지원</div>
               <div className="bg-white bg-opacity-5 p-6 rounded-xl space-y-4">
                 <div className="flex items-center">
                   <svg 
@@ -295,48 +295,11 @@ export default function ZootopProject() {
                     개인정보처리방침
                   </a>
                 </div>
-
-                {/* <div className="flex items-center">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    strokeWidth={1.5} 
-                    stroke="currentColor" 
-                    className="w-5 h-5 mr-3 text-blue-400"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" 
-                    />
-                  </svg>
-                  <a 
-                    href="/terms-of-service" 
-                    target="_blank"
-                    className="text-blue-400 hover:text-blue-300 transition-colors"
-                  >
-                    서비스 이용약관
-                  </a>
-                </div> */}
               </div>
             </div>
           </div>
         </motion.div>
       </div>
-      {/* <footer className="relative bg-black bg-opacity-50 text-white py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center space-y-3">
-            <div className="text-sm text-gray-400">
-              <div className="font-medium mb-2">띵킹캣</div>
-              <div>서울특별시 강남구 테헤란로 501, 6층</div>
-            </div>
-            <div className="text-xs text-gray-500">
-              &copy; 2024 thinkingcat. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer> */}
     </div>
   );
 } 

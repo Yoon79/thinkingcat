@@ -80,7 +80,7 @@ const Header = () => {
           </motion.p> */}
 
           <motion.p 
-            className="text-lg text-gray-100 max-w-xl mx-auto text-center leading-relaxed px-4"
+            className="text-lg sm:text-base text-gray-100 max-w-xl mx-auto text-center leading-relaxed px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}

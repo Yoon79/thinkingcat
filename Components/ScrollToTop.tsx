@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const ScrollToTop = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -18,36 +17,29 @@ const ScrollToTop = () => {
   };
 
   return (
-    <AnimatePresence>
-      {showScrollTop && (
-          <motion.button
-              onClick={scrollToTop}
-              className="fixed bottom-14 right-6 bg-gray-50 text-[#1d0644] bg-opacity-95 p-2.5 rounded-full shadow-lg hover:bg-[#1d0644] hover:text-white transition-all duration-300 z-50"
-              aria-label="Scroll to top"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100, damping: 10 } }}
-              exit={{ opacity: 0, scale: 0.5, transition: { type: "spring", stiffness: 100, damping: 10 } }}
-              whileHover={{ scale: 1, transition: { type: "spring", stiffness: 100, damping: 10 } }}
-              whileTap={{ scale: 0.95, transition: { type: "spring", stiffness: 100, damping: 10 } }}
-          >
+      <button
+          onClick={scrollToTop}
+          className={`fixed bottom-14 right-6 bg-purple-50 text-[#1d0644] bg-opacity-95 p-2.5 rounded-full shadow-lg hover:bg-[#1d0644] hover:text-white transition-all duration-300 ease-in-out transform ${
+              showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
+          } z-50`}
+          aria-label="Scroll to top"
+      >
         <svg
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            strokeWidth="1.5" 
-            stroke="currentColor" 
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
             className="h-6 w-6"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              d="m4.5 15.75 7.5-7.5 7.5 7.5" 
-            />
-          </svg>
-        </motion.button>
-      )}
-    </AnimatePresence>
+        >
+          <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+          />
+        </svg>
+      </button>
   );
 };
 
-export default ScrollToTop; 
+export default ScrollToTop;

@@ -35,7 +35,7 @@ const Projects = () => {
       </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-bold text-gray-50 mb-2">프로젝트</h2>
+          <h2 className="text-2xl sm:text-xl font-bold text-gray-50 mb-2">프로젝트</h2>
           <p className="text-gray-100">Projects</p>
         </div>
 
@@ -46,8 +46,8 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               whileHover={{ y: -8 }}
-              className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
-              <div className="text-center text-xl mb-4">
+              className="bg-[#2c2635] bg-opacity-90 p-6 rounded-lg">
+              <div className="text-center sm:text-lg text-xl mb-4">
                 소셜 네트워크 플랫폼
               </div>
               <div className="flex justify-center">
@@ -59,7 +59,7 @@ const Projects = () => {
                   className="w-60 h-60 object-contain"
                 />
               </div>
-              <div className="mt-4 text-center">
+              <div className="mt-4 text-center sm:text-sm">
                 <p>혁신적인 기획으로</p>
                 <p>새로운 형태의 소셜 네트워크 개발</p>
               </div>
@@ -75,8 +75,8 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ scale: 1.08 }}
-              className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
-              <div className="text-center text-xl mb-4">
+              className="bg-[#2c2635] bg-opacity-90 p-6 rounded-lg">
+              <div className="text-center sm:text-lg text-xl mb-4">
                 식물 쇼핑몰 및 커뮤니티
               </div>
               <div className="flex justify-center">
@@ -88,7 +88,7 @@ const Projects = () => {
                   className="w-60 h-60 object-contain"
                 />
               </div>
-              <div className="mt-4 text-center">
+              <div className="mt-4 sm:text-sm text-center">
                 <p>최신 기술이 적용된 대규모</p>
                 <p>식물 쇼핑몰 및 커뮤니티 개발</p>
               </div>
@@ -106,8 +106,8 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               whileHover={{ scale: 1.08 }}
-              className="bg-[#1d0644] bg-opacity-70 p-6 rounded-lg">
-              <div className="text-center text-xl mb-4">
+              className="bg-[#2c2635] bg-opacity-90 p-6 rounded-lg">
+              <div className="text-center sm:text-lg text-xl mb-4">
                 동물원 관리 시스템
               </div>
               <div className="flex justify-center">
@@ -119,7 +119,7 @@ const Projects = () => {
                   className="w-60 h-60 object-contain"
                 />
               </div>
-              <div className="mt-4 text-center">
+              <div className="mt-4 sm:text-sm text-center">
                 <p>스마트한 전산화로</p>
                 <p>편리, 효율, 정확성까지 실현</p>
               </div>
