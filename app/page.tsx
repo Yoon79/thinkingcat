@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import Header from '@/Components/Header';
+import Main from '@/Components/Main';
 import Projects from '@/Components/Projects';
 import About from '@/Components/About';
 import Contact from '@/Components/Contact';
@@ -34,6 +35,7 @@ const Home: React.FC = () => {
         <Header />
         {/* <Promotion /> */}
         <main className="flex-grow">
+          <Main />
           <Projects />
           <About />
           <Contact />
