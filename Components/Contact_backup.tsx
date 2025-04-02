@@ -14,12 +14,9 @@ const Contact = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="max-w-2xl mx-auto text-center"
+          className="max-w-2xl mx-auto"
         >
-           <p className="text-lg sm:text-base text-gray-100 leading-relaxed mb-8">
-            솔루션을 문의하고 띵킹캣의 파트너로 함께하세요
-          </p>
-          <div className=" bg-purple-50 py-4 rounded-lg border border-gray-100">
+          <div className=" bg-purple-50 py-8 rounded-lg border border-gray-100">
             <div className="flex flex-col items-center gap-6">
               <a
                 href="mailto:thinkingcatworks@gmail.com"
@@ -41,6 +38,30 @@ const Contact = () => {
                 </svg>
                 <span className="text-lg">thinkingcatworks@gmail.com</span>
               </a>
+
+              <a
+                href="https://www.instagram.com/thinkingcatworks"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-gray-900 rainbow-hover hover:text-gray-600 transition-colors"
+              >
+                <Image 
+                  src="/instagram.png" 
+                  alt="Instagram icon" 
+                  width={24} 
+                  height={24} 
+                  className="w-6 h-6"
+                />
+                <span className="text-lg">Instagram</span>
+              </a>
+            </div>
+
+            <div className="mt-8 pt-8 sm:text-sm border-t border-gray-200">
+              <p className="text-center text-gray-600">
+                협업제안이나 문의사항이 있으시다면 연락주세요.
+                <br />
+                24시간 안에 답변 드리겠습니다.
+              </p>
             </div>
           </div>
         </motion.div>

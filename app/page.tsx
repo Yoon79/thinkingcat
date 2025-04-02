@@ -6,6 +6,7 @@ import Main from '@/Components/Main';
 import Projects from '@/Components/Projects';
 import About from '@/Components/About';
 import Contact from '@/Components/Contact';
+import Partners from '@/Components/Partners';
 import Footer from '@/Components/Footer';
 import ScrollToTop from '@/Components/ScrollToTop';
 
@@ -39,6 +40,7 @@ const Home: React.FC = () => {
           <Projects />
           <About />
           <Contact />
+          {/* <Partners /> */}
         </main>
         <Footer />
       </div>

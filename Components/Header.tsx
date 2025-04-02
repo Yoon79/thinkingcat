@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm hidden md:block">
-        <div className="flex items-center h-16 justify-between px-10">
+        <div className="flex items-center h-20 justify-between px-32">
           {/* Logo */}
           <motion.div 
             className="flex items-center"
@@ -22,7 +22,7 @@ const Header = () => {
                 className="w-10 h-10"
               />
             </div>
-            <div className="text-lg font-bold">THINKINGCAT</div>
+            <div className="text-xl font-bold">THINKINGCAT</div>
             {/* <motion.div 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
