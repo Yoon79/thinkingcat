@@ -6,6 +6,7 @@ export async function GET(request: Request) {
   const orderId = searchParams.get("orderId");
 
   // 실패 로그 기록
+  
   console.error(`Payment failed for order ${orderId}: ${message}`);
 
   // 실패 페이지로 리다이렉트
