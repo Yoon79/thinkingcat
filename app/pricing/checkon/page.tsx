@@ -18,11 +18,46 @@ import { nanoid } from "nanoid";
 
 declare global {
   interface Window {
-    IMP: any;
+    IMP: {
+      init: (storeId: string) => void;
+      request_pay: (
+        params: {
+          pg: string;
+          pay_method: string;
+          merchant_uid: string;
+          name: string;
+          amount: number;
+          buyer_email: string;
+          buyer_name: string;
+          m_redirect_url: string;
+        },
+        callback?: (response: {
+          success: boolean;
+          error_msg?: string;
+          imp_uid?: string;
+          merchant_uid?: string;
+          pay_method?: string;
+          paid_amount?: number;
+          status?: string;
+          pg_provider?: string;
+          pg_tid?: string;
+          paid_at?: number;
+        }) => void
+      ) => void;
+    };
   }
 }
 
-const plans = [
+interface Plan {
+  title: string;
+  price: string;
+  priceAmount: number;
+  features: string[];
+  buttonText: string;
+  popular: boolean;
+}
+
+const plans: Plan[] = [
   {
     title: "프리미엄",
     price: "49,900",
@@ -63,7 +98,7 @@ export default function PricingPage() {
     };
   }, []);
 
-  const handlePayment = async (plan: any) => {
+  const handlePayment = async (plan: Plan) => {
     const merchantUid = nanoid();
     window.IMP.request_pay(
       {
@@ -76,7 +111,7 @@ export default function PricingPage() {
         buyer_name: "구매자",
         m_redirect_url: `${window.location.origin}/api/payments/success`,
       },
-      (response: any) => {
+      (response) => {
         if (response.success) {
           router.push("/payment/success");
         } else {
