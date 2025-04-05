@@ -8,10 +8,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-bold text-gray-50 mb-4">회사 정보</h3>
-            <p className="mb-2">대표: 김민혁</p>
-            <p className="mb-2">이메일: contact@thinkingcatworks.com</p>
-            <p className="mb-2">사업자등록번호: 123-45-67890</p>
-            <p>주소: 서울특별시 강남구</p>
+            <p className="mb-2">대표: 왕세윤</p>
+            <p className="mb-2">이메일: thinkingcatworks@gmail.com</p>
+            <p className="mb-2">사업자등록번호: 826-14-02542</p>
+            <p>
+              주소: 서울특별시 강남구 개포로15길 3-4, 지101호 A240호(개포동){" "}
+            </p>
           </div>
           <div>
             <h3 className="text-lg font-bold text-gray-50 mb-4">프로젝트</h3>

@@ -1,6 +1,3 @@
-import { motion } from "framer-motion";
-import Image from "next/image";
-
 const Main = () => {
   return (
     <div className="relative h-[60vh] ">
