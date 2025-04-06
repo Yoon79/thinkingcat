@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Providers from "../components/providers";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -79,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body suppressHydrationWarning={true} className="antialiased">
-        <Providers>{children}</Providers>
+        {children}
         <script
           type="application/ld+json"
           suppressHydrationWarning
