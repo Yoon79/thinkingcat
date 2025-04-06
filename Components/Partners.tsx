@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const Partners = () => {
   const partners = [
@@ -22,9 +23,7 @@ const Partners = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl sm:text-xl font-bold text-gray-50 mb-2">
-            협력사
-          </h2>
+          <h2 className="text-2xl sm:text-xl font-bold text-gray-50 mb-2">협력사</h2>
           <p className="text-gray-100">Partners</p>
         </motion.div>
 
@@ -52,4 +51,4 @@ const Partners = () => {
   );
 };
 
-export default Partners;
+export default Partners; 
