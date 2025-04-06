@@ -3,67 +3,91 @@ import { motion } from "framer-motion";
 const About = () => {
   const cards = [
     {
-      title: "혁신적인 기획",
-      description:
-        "새로운 가치를 창출하는 기획력으로 차별화된 서비스를 제공합니다.",
-      direction: "left",
+      title: "혁신",
+      description: "새로운 기술과 아이디어로 혁신적인 솔루션을 제공합니다",
+      direction: "left" // 왼쪽에서 나타남
     },
     {
-      title: "최신 기술 적용",
-      description:
-        "최신 기술을 활용하여 안정적이고 효율적인 시스템을 구축합니다.",
-      direction: "up",
+      title: "전문성",
+      description: "전문적인 기술력으로 최고의 결과물을 만듭니다",
+      direction: "top" // 위에서 나타남
     },
     {
-      title: "고객 중심 개발",
-      description:
-        "고객의 니즈를 최우선으로 생각하며 사용자 경험을 고려한 개발을 진행합니다.",
-      direction: "right",
-    },
+      title: "신뢰",
+      description: "신뢰할 수 있는 파트너로서 함께 성장합니다",
+      direction: "right" // 오른쪽에서 나타남
+    }
   ];
 
   const getInitialPosition = (direction: string) => {
     switch (direction) {
       case "left":
-        return { x: -50, opacity: 0 };
+        return { x: -100, opacity: 0 };
       case "right":
-        return { x: 50, opacity: 0 };
-      case "up":
-        return { y: 50, opacity: 0 };
+        return { x: 100, opacity: 0 };
+      case "top":
+        return { y: -50, opacity: 0 };
       default:
-        return { y: 50, opacity: 0 };
+        return { opacity: 0 };
     }
   };
 
   return (
-    <section id="about" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-24 bg-black overflow-hidden">
+      <div className="container mx-auto px-4 max-w-full">
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-xl font-bold text-gray-50 mb-2">
-            소개
-          </h2>
+          <h2 className="text-2xl sm:text-xl font-bold text-gray-50 mb-2">소개</h2>
           <p className="text-gray-100">About</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cards.map((card, index) => (
-            <motion.div
-              key={index}
-              initial={getInitialPosition(card.direction)}
-              whileInView={{ x: 0, y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-[#2c2635] bg-opacity-90 p-6 rounded-lg"
-            >
-              <h3 className="text-xl font-bold text-gray-50 mb-4">
-                {card.title}
-              </h3>
-              <p className="text-gray-200">{card.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="max-w-3xl mx-auto text-center px-4"
+        >
+          <p className="text-lg sm:text-base text-gray-100 leading-relaxed mb-8">
+            소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mt-12">
+            {cards.map((card, index) => (
+              <motion.div
+                key={card.title}
+                className="bg-purple-50 p-4 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                initial={getInitialPosition(card.direction)}
+                whileInView={{ x: 0, y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.2,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <motion.div
+                  className="text-center"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 100 }}
+                >
+                  <h3 className="text-xl sm:text-lg font-semibold text-gray-900 sm:mb-2 mb-4">
+                    {card.title}
+                  </h3>
+                  <div className="h-0.5 w-12 bg-[#1d0644] mx-auto mb-4" />
+                  <p className="text-sm text-gray-600">
+                    {card.description}
+                  </p>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default About;
+export default About; 
