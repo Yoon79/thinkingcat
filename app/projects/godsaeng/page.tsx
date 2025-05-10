@@ -109,12 +109,13 @@ export default function GodsaengProject() {
                   className="h-[60px] w-auto"
                 />
               </a>
-              <a 
+              <div>
+              {/* <a 
                 href="https://apps.apple.com/app/your-app-id" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"
-              >
+              > */}
                 <Image
                   src="/app-store-badge.png"
                   alt="App Store Badge"
@@ -122,7 +123,9 @@ export default function GodsaengProject() {
                   height={60}
                   className="h-[60px] w-auto"
                 />
-              </a>
+                <div className="italic text-gray-300">* 출시예정</div>
+              {/* </a> */}
+              </div>
             </div>
           </div>
 

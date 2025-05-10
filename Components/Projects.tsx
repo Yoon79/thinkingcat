@@ -40,6 +40,37 @@ const Projects = () => {
         </div>
 
         <div className="text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Link href="/projects/checkon" className="block">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -8 }}
+              className="bg-[#2c2635] bg-opacity-90 p-6 rounded-lg">
+              <div className="text-center sm:text-lg text-xl mb-4">
+                출결 관리 시스템
+              </div>
+              <div className="flex justify-center">
+                <Image
+                  src="/checkon-main.png"
+                  alt="체크온"
+                  width={100}
+                  height={100}
+                  className="w-60 h-60 object-contain"
+                />
+              </div>
+              <div className="mt-4 text-center sm:text-sm">
+                <p>스마트한 출결 관리로</p>
+                <p>효율적인 업무 환경 구축</p>
+              </div>
+              <div className='mt-4 flex items-center justify-center gap-2'>
+                <div className='items-center rounded-full flex justify-center text-center h-6 w-20 px-1 neon-text border border-0.5'>mcmi</div>
+                <div>X</div>
+                <div className='items-center rounded-full flex justify-center text-center h-6 w-20 px-1 neon-text border border-0.5'>띵킹캣</div>
+              </div>
+            </motion.div>
+          </Link>
+
           <Link href="/projects/godsaeng" className="block">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

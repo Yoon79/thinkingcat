@@ -5,12 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 
-export default function PiumProject() {
+export default function CheckOnProject() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  // const constraintsRef = useRef(null);
-  const screenshots = ['/pium1.png', '/pium2.png', '/pium3.png'];
+  const screenshots = ['/checkon1.png', '/checkon2.png', '/checkon3.png'];
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -22,6 +21,7 @@ export default function PiumProject() {
         );
       }, 2000);
     }
+
     return () => {
       if (interval) {
         clearInterval(interval);
@@ -56,9 +56,8 @@ export default function PiumProject() {
     }, 3000);
   };
 
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-900 via-teal-900 to-blue-900 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-600 to-green-600 text-white">
       {/* 상단 네비게이션 */}
       <nav className="p-4">
         <Link 
@@ -82,21 +81,21 @@ export default function PiumProject() {
           {/* 앱 아이콘 및 제목 */}
           <div className="flex flex-col items-center justify-center mb-12">
             <Image
-              src="/icon-piumddeul.png"
-              alt="pium icon"
+              src="/checkon.png"
+              alt="checkon icon"
               width={120}
               height={120}
               className="rounded-2xl shadow-lg mb-6"
             />
-            <h2 className="text-3xl sm:text-xl font-bold mb-4">식물 쇼핑몰 및 커뮤니티</h2>
+            <h2 className="text-3xl sm:text-xl font-bold mb-4">출결 관리 시스템</h2>
             <div className="text-xl sm:text-base text-gray-300 mb-8">
-              최신 기술이 적용된 대규모 식물 쇼핑몰 및 커뮤니티를 만나보세요
+            복잡한 출결 관리, 이제는 한눈에 스마트하게 해결하세요.
             </div>
 
             {/* 앱스토어 링크 */}
-            <div className="flex gap-4 justify-center">
+            {/* <div className="flex gap-4 justify-center">
               <a 
-                href="https://play.google.com/store/apps/details?id=com.kokoseoul.piumddeul" 
+                href="https://play.google.com/store/apps/details?id=com.checkon.app"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"
@@ -109,28 +108,29 @@ export default function PiumProject() {
                   className="h-[60px] w-auto"
                 />
               </a>
-              <div>
-              {/* <a 
-                href="https://apps.apple.com/app/your-app-id" 
+              <a 
+                href="https://apps.apple.com/app/checkon/id1234567890"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"
-              > */}
+              >
                 <Image
                   src="/app-store-badge.png"
-                  alt="App Store Badge"
+                  alt="App Store badge"
                   width={200}
                   height={60}
                   className="h-[60px] w-auto"
                 />
-                <div className="italic text-gray-300">* 출시예정</div>
-              {/* </a> */}
-              </div>
-            </div>
+              </a>
+            </div> */}
           </div>
-
-           {/* 앱 스크린샷 */}
-           <div className="mt-20">
+          <div className="text-center mb-8">
+              <p className="text-xl text-gray-300">
+              모바일과 데스크탑에서 바로 이용 가능합니다
+              </p>
+            </div>
+          {/* 앱 스크린샷 */}
+          <div className="mt-20">
             {/* 데스크톱 뷰 */}
             <div className="hidden md:grid md:grid-cols-3 gap-6">
               {screenshots.map((img, index) => (
@@ -211,35 +211,37 @@ export default function PiumProject() {
               </div>
             </div>
           </div>
+
           {/* 앱 설명 */}
           <div className="mt-20 text-left max-w-3xl mx-auto">
             <div className="text-2xl sm:text-xl font-semibold mb-6">주요 기능</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">식물 쇼핑</div>
-                <p className="text-gray-300 sm:text-sm">
-                  다양한 식물과 관련 용품을 쉽고 편리하게 구매할 수 있습니다.
-                </p>
-              </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">커뮤니티</div>
-                <p className="text-gray-300 sm:text-sm">
-                  식집사들과 정보를 공유하고 소통할 수 있는 공간입니다.
-                </p>
-              </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">식물 케어 가이드</div>
-                <p className="text-gray-300 sm:text-sm">
-                  식물별 맞춤 관리 방법과 팁을 제공합니다.
-                </p>
-              </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">식물 공구</div>
-                <p className="text-gray-300 sm:text-sm">
-                    희귀한 식물들을 연계된 농장에서 공수 해옵니다.
-                </p>
-              </div>
-            </div>
+  <div className="bg-white bg-opacity-10 p-6 rounded-xl">
+    <div className="text-xl sm:text-lg font-semibold mb-3">실시간 출결 등록</div>
+    <p className="text-gray-300 sm:text-sm">
+      선생님이 직접 출석 체크, 결석 처리까지 모바일로 간편하게
+    </p>
+  </div>
+  <div className="bg-white bg-opacity-10 p-6 rounded-xl">
+    <div className="text-xl sm:text-lg font-semibold mb-3">수업 & 학생 관리</div>
+    <p className="text-gray-300 sm:text-sm">
+      수업 개설부터 학생 배정까지, 선생님별 맞춤 수업 구성 가능
+    </p>
+  </div>
+  <div className="bg-white bg-opacity-10 p-6 rounded-xl">
+    <div className="text-xl sm:text-lg font-semibold mb-3">회차 & 결제 관리</div>
+    <p className="text-gray-300 sm:text-sm">
+      수업 회차 자동 차감, 할인 적용, 납부 내역까지 한눈에 확인
+    </p>
+  </div>
+  <div className="bg-white bg-opacity-10 p-6 rounded-xl">
+    <div className="text-xl sm:text-lg font-semibold mb-3">출결 리포트 제공</div>
+    <p className="text-gray-300 sm:text-sm">
+      학생별 출결 현황 및 수업 통계를 정리해주는 관리자 리포트
+    </p>
+  </div>
+</div>
+
 
             {/* 지원 섹션 */}
             <div className="mt-20 border-t border-white/10 pt-10">
@@ -284,7 +286,7 @@ export default function PiumProject() {
                     />
                   </svg>
                   <a
-                      href="https://piumddeul.com/service/privacy"
+                      href="https://checkon.vercel.app/privacy"
                       target="_blank"
                       className="text-gray-300 hover:text-blue-300 transition-colors"
                   >
@@ -296,7 +298,6 @@ export default function PiumProject() {
           </div>
         </motion.div>
       </div>
-      
     </div>
   );
 } 
