@@ -3,57 +3,30 @@
 import { motion, PanInfo } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function CheckOnProject() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [x, setX] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
   const screenshots = ['/checkon1.png', '/checkon2.png', '/checkon3.png'];
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
-
-    if (isAutoPlaying) {
-      interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 2000);
-    }
-
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  }, [isAutoPlaying, screenshots.length]);
-
-  const handleDragStart = () => {
-    setIsDragging(true);
-    setIsAutoPlaying(false);
-  };
+    setX(-currentIndex * (window.innerWidth));
+  }, [currentIndex]);
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    setIsDragging(false);
     const swipeThreshold = 50;
     const swipe = info.offset.x;
-    
     if (Math.abs(swipe) > swipeThreshold) {
       if (swipe > 0 && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1);
-      } else if (swipe < 0) {
-        if (currentIndex === screenshots.length - 1) {
-          setCurrentIndex(0);
-        } else {
-          setCurrentIndex(currentIndex + 1);
-        }
+      } else if (swipe < 0 && currentIndex < screenshots.length - 1) {
+        setCurrentIndex(currentIndex + 1);
       }
+    } else {
+      setX(-currentIndex * (window.innerWidth));
     }
-    
-    setTimeout(() => {
-      setIsAutoPlaying(true);
-    }, 3000);
   };
 
   return (
@@ -153,25 +126,27 @@ export default function CheckOnProject() {
 
             {/* 모바일 스와이프 뷰 */}
             <div className="md:hidden relative w-full overflow-x-hidden">
-              <div className="w-full px-8">
+              <div className="w-full px-0" ref={containerRef}>
                 <motion.div
                   className="flex touch-pan-y"
-                  animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex * 2}rem)` }}
+                  drag="x"
+                  dragConstraints={{ left: -((screenshots.length - 1) * window.innerWidth), right: 0 }}
+                  onDragEnd={handleDragEnd}
+                  animate={{ x }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  style={{ touchAction: 'none', width: 'fit-content' }}
+                  style={{ touchAction: 'pan-y pinch-zoom', width: `${screenshots.length * 100}vw` }}
                 >
                   {screenshots.map((img, index) => (
                     <div
                       key={index}
-                      className="min-w-full w-full flex-shrink-0 flex justify-center relative select-none"
-                      style={{ 
-                        marginRight: '2rem',
+                      className="w-screen flex-shrink-0 flex justify-center relative select-none"
+                      style={{
                         opacity: currentIndex === index ? 1 : 0.3,
                         transition: 'all 0.3s ease',
-                        transform: `scale(${currentIndex === index ? 1 : 0.9})`,
+                        transform: `scale(${currentIndex === index ? 1 : 0.95})`,
                       }}
                     >
-                      <div className="relative w-full max-w-[280px]">
+                      <div className="relative w-full max-w-[320px] mx-auto">
                         <Image
                           src={img}
                           alt={`Screenshot ${index + 1}`}
