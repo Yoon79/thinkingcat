@@ -116,34 +116,27 @@ export default function OhihooProject() {
             </div>
             {/* 모바일 스와이프 뷰 */}
             <div className="md:hidden relative w-full overflow-x-hidden">
-              <div className="w-full px-8">
+              <div className="w-full px-0">
                 <motion.div
                   drag="x"
-                  dragConstraints={{ left: -((screenshots.length - 1) * (280 + 32)), right: 0 }}
-                  dragElastic={0.1}
-                  dragMomentum={false}
                   onDragEnd={handleDragEnd}
                   onDragStart={handleDragStart}
                   className="flex touch-pan-y"
-                  style={{ 
-                    transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 2}rem))`,
-                    transition: isDragging ? 'none' : 'transform 0.3s ease-out',
-                    touchAction: 'pan-y pinch-zoom',
-                    width: 'fit-content',
-                  }}
+                  animate={{ x: `-${currentIndex * 100}vw` }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  style={{ touchAction: 'pan-y pinch-zoom', width: `${screenshots.length * 100}vw` }}
                 >
                   {screenshots.map((img, index) => (
                     <div
                       key={index}
-                      className="min-w-full w-full flex-shrink-0 flex justify-center relative select-none"
-                      style={{ 
-                        marginRight: '2rem',
+                      className="w-screen flex-shrink-0 flex justify-center relative select-none"
+                      style={{
                         opacity: currentIndex === index ? 1 : 0.3,
                         transition: 'all 0.3s ease',
-                        transform: `scale(${currentIndex === index ? 1 : 0.9})`,
+                        transform: `scale(${currentIndex === index ? 1 : 0.95})`,
                       }}
                     >
-                      <div className="relative w-full max-w-[280px]">
+                      <div className="relative w-full max-w-[320px] mx-auto">
                         <Image
                           src={img}
                           alt={`Screenshot ${index + 1}`}
