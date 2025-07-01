@@ -31,7 +31,9 @@ export default function PiumProject() {
   }, [isAutoPlaying, screenshots.length]);
 
   useEffect(() => {
-    setX(-currentIndex * (window.innerWidth));
+    if (typeof window !== 'undefined') {
+      setX(-currentIndex * window.innerWidth);
+    }
   }, [currentIndex]);
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
@@ -44,7 +46,9 @@ export default function PiumProject() {
         setCurrentIndex(currentIndex + 1);
       }
     } else {
-      setX(-currentIndex * (window.innerWidth));
+      if (typeof window !== 'undefined') {
+        setX(-currentIndex * window.innerWidth);
+      }
     }
     
     setTimeout(() => {
@@ -153,11 +157,11 @@ export default function PiumProject() {
                 <motion.div
                   className="flex touch-pan-y"
                   drag="x"
-                  dragConstraints={{ left: -((screenshots.length - 1) * window.innerWidth), right: 0 }}
+                  dragConstraints={typeof window !== 'undefined' ? { left: -((screenshots.length - 1) * window.innerWidth), right: 0 } : undefined}
                   onDragEnd={handleDragEnd}
                   animate={{ x }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  style={{ touchAction: 'pan-y pinch-zoom', width: `${screenshots.length * 100}vw` }}
+                  style={{ touchAction: 'pan-y pinch-zoom', width: typeof window !== 'undefined' ? `${screenshots.length * window.innerWidth}px` : undefined }}
                 >
                   {screenshots.map((img, index) => (
                     <div
