@@ -286,7 +286,7 @@ export default function CheckOnProject() {
                     />
                   </svg>
                   <a
-                      href="https://checkon.vercel.app/privacy"
+                      href="https://checkonthemusic.com/privacy"
                       target="_blank"
                       className="text-gray-300 hover:text-blue-300 transition-colors"
                   >

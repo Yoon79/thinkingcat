@@ -5,16 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 
-export default function GodsaengProject() {
+export default function OhihooProject() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  // const constraintsRef = useRef(null);
-  const screenshots = ['/godsaeng.png', '/godsaeng2.png', '/godsaeng3.png'];
+  const screenshots = ['/ohihoo1.png', '/ohihoo2.png', '/ohihoo3.png', '/ohihoo4.png', '/ohihoo5.png', '/ohihoo6.png'];
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
-
     if (isAutoPlaying) {
       interval = setInterval(() => {
         setCurrentIndex((prevIndex) => 
@@ -22,7 +20,6 @@ export default function GodsaengProject() {
         );
       }, 2000);
     }
-
     return () => {
       if (interval) {
         clearInterval(interval);
@@ -39,7 +36,6 @@ export default function GodsaengProject() {
     setIsDragging(false);
     const swipeThreshold = 50;
     const swipe = info.offset.x;
-    
     if (Math.abs(swipe) > swipeThreshold) {
       if (swipe > 0 && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1);
@@ -51,14 +47,13 @@ export default function GodsaengProject() {
         }
       }
     }
-    
     setTimeout(() => {
       setIsAutoPlaying(true);
     }, 3000);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-blue-900 to-teal-900 text-white">
+    <div className="min-h-screen bg-[#f8f5f0] text-[#333]">
       {/* 상단 네비게이션 */}
       <nav className="p-4">
         <Link 
@@ -82,54 +77,23 @@ export default function GodsaengProject() {
           {/* 앱 아이콘 및 제목 */}
           <div className="flex flex-col items-center justify-center mb-12">
             <Image
-              src="/godlife-icon.png"
-              alt="godsaeng icon"
+              src="/circlelogo.png"
+              alt="ohihoo icon"
               width={120}
               height={120}
-              className="rounded-2xl shadow-lg mb-6"
+              className="rounded-2xl shadow-lg mb-6 bg-white"
             />
-            <h2 className="text-3xl sm:text-xl font-bold mb-4">소셜 네트워크 플랫폼</h2>
-            <div className="text-xl sm:text-base text-gray-300 mb-8">
-              혁신적인 기획으로 새로운 형태의 소셜 네트워크를 만나보세요
-            </div>
-
-            {/* 앱스토어 링크 */}
-            <div className="flex gap-4 justify-center">
-              <a 
-                href="https://play.google.com/store/apps/details?id=com.kokoseoul.gongyak" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-transform hover:scale-105"
-              >
-                <Image
-                  src="/google-play-badge.png"
-                  alt="Google Play Badge"
-                  width={200}
-                  height={60}
-                  className="h-[60px] w-auto"
-                />
-              </a>
-              <div>
-              <a 
-                href="https://apps.apple.com/kr/app/%ED%88%AC%EB%91%90%EA%B2%8C%EB%8D%94/id6744063670?l=en-GB" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-transform hover:scale-105"
-              >
-                <Image
-                  src="/app-store-badge.png"
-                  alt="App Store Badge"
-                  width={200}
-                  height={60}
-                  className="h-[60px] w-auto"
-                />
-                {/* <div className="italic text-gray-300">* 출시예정</div> */}
-              </a>
-              </div>
+            <h2 className="text-3xl sm:text-xl font-bold mb-4 text-[#222]">소품샵 오히후 온라인 스토어</h2>
+            <div className="text-xl sm:text-base text-[#555] mb-8">
+              일상의 소소한 행복을 더하는 트렌디한 온라인 소품샵
             </div>
           </div>
-
-          {/* 앱 스크린샷 */}
+          <div className="text-center mb-8">
+              <p className="text-xl text-[#666]">
+                다양한 소품을 쉽고 빠르게 만나보세요
+              </p>
+            </div>
+          {/* 스크린샷 */}
           <div className="mt-20">
             {/* 데스크톱 뷰 */}
             <div className="hidden md:grid md:grid-cols-3 gap-6">
@@ -150,7 +114,6 @@ export default function GodsaengProject() {
                 </motion.div>
               ))}
             </div>
-
             {/* 모바일 스와이프 뷰 */}
             <div className="md:hidden relative w-full overflow-x-hidden">
               <div className="w-full px-8">
@@ -196,7 +159,6 @@ export default function GodsaengProject() {
                   ))}
                 </motion.div>
               </div>
-
               {/* 페이지 인디케이터 */}
               <div className="flex justify-center mt-4 gap-2">
                 {screenshots.map((_, index) => (
@@ -211,41 +173,40 @@ export default function GodsaengProject() {
               </div>
             </div>
           </div>
-
-          {/* 앱 설명 */}
+          {/* 설명 및 주요 기능 */}
           <div className="mt-20 text-left max-w-3xl mx-auto">
-            <div className="text-2xl sm:text-xl font-semibold mb-6">주요 기능</div>
+            <div className="text-2xl sm:text-xl font-semibold mb-6 text-[#222]">주요 기능</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">사용자 맞춤형 피드</div>
-                <p className="text-gray-300 sm:text-sm">
-                  AI 기반 추천 시스템으로 사용자의 관심사에 맞는 콘텐츠를 제공합니다.
+              <div className="bg-white/80 p-6 rounded-xl shadow">
+                <div className="text-xl sm:text-lg font-semibold mb-3 text-[#333]">소품 큐레이션</div>
+                <p className="text-[#555] sm:text-sm">
+                  소소한 행복을 더하는 아기자기한 소품을 한눈에!
                 </p>
               </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">실시간 댓글</div>
-                <p className="text-gray-300 sm:text-sm">
-                  빠른 실시간 댓글로 즉각적인 소통이 가능합니다.
+              <div className="bg-white/80 p-6 rounded-xl shadow">
+                <div className="text-xl sm:text-lg font-semibold mb-3 text-[#333]">간편한 온라인 주문</div>
+                <p className="text-[#555] sm:text-sm">
+                  모바일/PC에서 쉽고 빠르게 주문 가능
                 </p>
               </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">커뮤니티</div>
-                <p className="text-gray-300 sm:text-sm">
-                  다양한 주제의 커뮤니티에서 비슷한 관심사를 가진 사람들과 소통하세요.
+              <div className="bg-white/80 p-6 rounded-xl shadow">
+                <div className="text-xl sm:text-lg font-semibold mb-3 text-[#333]">다양한 결제 수단</div>
+                <p className="text-[#555] sm:text-sm">
+                  카드, 간편결제 등 다양한 결제 지원
                 </p>
               </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-xl sm:text-lg font-semibold mb-3">콘텐츠 공유</div>
-                <p className="text-gray-300 sm:text-sm">
-                  다양한 형태의 콘텐츠를 쉽고 빠르게 공유할 수 있습니다.
+              <div className="bg-white/80 p-6 rounded-xl shadow">
+                <div className="text-xl sm:text-lg font-semibold mb-3 text-[#333]">빠른 배송 서비스</div>
+                <p className="text-[#555] sm:text-sm">
+                  전국 어디서나 빠르고 안전한 배송
                 </p>
               </div>
             </div>
-
+            
             {/* 지원 섹션 */}
-            <div className="mt-20 border-t border-white/10 pt-10">
-              <div className="text-2xl sm:text-xl font-semibold mb-6">지원</div>
-              <div className="bg-white bg-opacity-5 p-6 rounded-xl space-y-4">
+            <div className="mt-20 border-t border-[#e5e1d8] pt-10">
+              <div className="text-2xl sm:text-xl font-semibold mb-6 text-[#222]">지원</div>
+              <div className="bg-white/70 p-6 rounded-xl space-y-4 shadow">
                 <div className="flex items-center">
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +214,7 @@ export default function GodsaengProject() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-5 h-5 mr-3 text-blue-400"
+                      className="w-5 h-5 mr-3 text-[#bfae99]"
                   >
                     <path
                         strokeLinecap="round"
@@ -263,12 +224,11 @@ export default function GodsaengProject() {
                   </svg>
                   <a
                       href="mailto:thinkingcatworks@gmail.com"
-                      className="text-gray-300 hover:text-blue-300 transition-colors"
+                      className="text-[#555] hover:text-[#bfae99] transition-colors"
                   >
                     thinkingcatworks@gmail.com
                   </a>
                 </div>
-
                 <div className="flex items-center">
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +236,7 @@ export default function GodsaengProject() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-5 h-5 mr-3 text-blue-400"
+                      className="w-5 h-5 mr-3 text-[#bfae99]"
                   >
                     <path
                         strokeLinecap="round"
@@ -285,9 +245,9 @@ export default function GodsaengProject() {
                     />
                   </svg>
                   <a
-                      href="https://gongyak.vercel.app/privacy"
+                      href="https://www.ohihoo.com/privacy"
                       target="_blank"
-                      className="text-gray-300 hover:text-blue-300 transition-colors"
+                      className="text-[#555] hover:text-[#bfae99] transition-colors"
                   >
                     개인정보처리방침
                   </a>
@@ -297,8 +257,6 @@ export default function GodsaengProject() {
           </div>
         </motion.div>
       </div>
-
-  
     </div>
   );
-} 
+}
