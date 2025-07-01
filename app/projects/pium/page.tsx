@@ -9,7 +9,6 @@ export default function PiumProject() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [x, setX] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   // const constraintsRef = useRef(null);
   const screenshots = ['/pium1.png', '/pium2.png', '/pium3.png'];
@@ -34,11 +33,6 @@ export default function PiumProject() {
   useEffect(() => {
     setX(-currentIndex * (window.innerWidth));
   }, [currentIndex]);
-
-  const handleDragStart = () => {
-    setIsDragging(true);
-    setIsAutoPlaying(false);
-  };
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50;
