@@ -116,27 +116,25 @@ export default function OhihooProject() {
             </div>
             {/* 모바일 스와이프 뷰 */}
             <div className="md:hidden relative w-full overflow-x-hidden">
-              <div className="w-full px-0">
+              <div className="w-full px-8">
                 <motion.div
-                  drag="x"
-                  onDragEnd={handleDragEnd}
-                  onDragStart={handleDragStart}
                   className="flex touch-pan-y"
-                  animate={{ x: `-${currentIndex * 100}vw` }}
+                  animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex * 2}rem)` }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  style={{ touchAction: 'pan-y pinch-zoom', width: `${screenshots.length * 100}vw` }}
+                  style={{ touchAction: 'none', width: 'fit-content' }}
                 >
                   {screenshots.map((img, index) => (
                     <div
                       key={index}
-                      className="w-screen flex-shrink-0 flex justify-center relative select-none"
-                      style={{
+                      className="min-w-full w-full flex-shrink-0 flex justify-center relative select-none"
+                      style={{ 
+                        marginRight: '2rem',
                         opacity: currentIndex === index ? 1 : 0.3,
                         transition: 'all 0.3s ease',
-                        transform: `scale(${currentIndex === index ? 1 : 0.95})`,
+                        transform: `scale(${currentIndex === index ? 1 : 0.9})`,
                       }}
                     >
-                      <div className="relative w-full max-w-[320px] mx-auto">
+                      <div className="relative w-full max-w-[280px]">
                         <Image
                           src={img}
                           alt={`Screenshot ${index + 1}`}

@@ -155,19 +155,10 @@ export default function CheckOnProject() {
             <div className="md:hidden relative w-full overflow-x-hidden">
               <div className="w-full px-8">
                 <motion.div
-                  drag="x"
-                  dragConstraints={{ left: -((screenshots.length - 1) * (280 + 32)), right: 0 }}
-                  dragElastic={0.1}
-                  dragMomentum={false}
-                  onDragEnd={handleDragEnd}
-                  onDragStart={handleDragStart}
                   className="flex touch-pan-y"
-                  style={{ 
-                    transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 2}rem))`,
-                    transition: isDragging ? 'none' : 'transform 0.3s ease-out',
-                    touchAction: 'pan-y pinch-zoom',
-                    width: 'fit-content',
-                  }}
+                  animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex * 2}rem)` }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  style={{ touchAction: 'none', width: 'fit-content' }}
                 >
                   {screenshots.map((img, index) => (
                     <div
