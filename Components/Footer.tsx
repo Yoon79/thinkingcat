@@ -1,124 +1,257 @@
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
+  const quickLinks = [
+    { name: "프로젝트", href: "/#projects" },
+    { name: "소개", href: "/#about" },
+    { name: "문의", href: "/#contact" },
+  ];
+
+  const projects = [
+    { name: "체크온", href: "/projects/checkon" },
+    { name: "투두게더", href: "/projects/godsaeng" },
+    { name: "피움뜰", href: "/projects/pium" },
+    { name: "동물원관리시스템", href: "/projects/zootop" },
+    { name: "오히후", href: "/projects/ohihoo" },
+  ];
+
+  const companyInfo = [
+    { label: "대표", value: "왕세윤" },
+    { label: "이메일", value: "thinkingcatworks@gmail.com" },
+    { label: "사업자번호", value: "826-14-02542" },
+    { label: "통신판매업번호", value: "2025-서울강남-01112" },
+  ];
+
   return (
-    <footer className="relative z-10 bg-[#2c2635] bg-opacity-95 text-white text-center">
-      <div className="mx-auto sm:ml-10">
-        <div className="pt-10 pb-10 sm:flex sm:justify-start">
-          <div className="text-base font-bold">띵킹캣</div>
-          <p className="sm:ml-2 text-sm text-gray-300">thinkingcat</p>
-        </div>
-
-        <div className="flex sm:flex-col justify-around">
-          <div className="flex justify-start">
-            <div className="pb-10 flex-col  text-sm text-gray-300 gap-4">
-              <div className="flex sm:flex-col">
-                <div className="flex">
-                  <p className="font-bold mr-1">대표</p>
-                  <p className="mr-2">왕세윤</p>
-                </div>
-                <div className="flex">
-                  <p className="font-bold mr-1">이메일</p>
-                  <p className="mr-2">thinkingcatworks@gmail.com</p>
-                </div>
-              </div>
-              <div className="flex sm:flex-col">
-                <div className="flex">
-                  <p className="font-bold mr-1">사업자번호</p>
-                  <p className="mr-2">826-14-02542</p>
-                </div>
-                <div className="flex">
-                  <p className="font-bold mr-1">통신판매업번호</p>
-                  <p className="mr-2">2025-서울강남-01112</p>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex">
-                  <p className="font-bold mr-1">주소</p>
-                  <div className="flex sm:flex-col">
-                    <p className="mr-1">서울특별시 강남구 개포로15길 3-4,</p>
-                    <p className="flex justify-start">
-                      지101호 A240호(개포동){" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex sm:pb-10">
-            <div className="flex justify-start text-sm ">
-              <div className="gap-1">
-                <div className="flex gap-2">
-                  <div className="">
-                    <Link
-                      href="/#projects"
-                      className="text-gray-300 font-bold hover:text-white transition">
-                      Projects
-                    </Link>
-                  </div>
-                  <div className="">
-                    <Link
-                      href="/projects/checkon"
-                      className="text-gray-300 hover:text-white transition">
-                      체크온
-                    </Link>
-                  </div>
-                  <div className="">
-                    <Link
-                      href="/projects/godsaeng"
-                      className="text-gray-300 hover:text-white transition">
-                      투두게더
-                    </Link>
-                  </div>
-                  <div className="">
-                    <Link
-                      href="/projects/pium"
-                      className="text-gray-300 hover:text-white transition">
-                      피움뜰
-                    </Link>
-                  </div>
-                  <div className="">
-                    <Link
-                      href="/projects/zootop"
-                      className="text-gray-300 hover:text-white transition">
-                      동물원관리시스템
-                    </Link>
-                  </div>
-                </div>
-                <div className="sm:flex sm:justify-start">
-                  <Link
-                    href="/#about"
-                    className="text-gray-300 font-bold hover:text-white transition">
-                    About
-                  </Link>
-                </div>
-                <div className="sm:flex sm:justify-start">
-                  <Link
-                    href="/#contact"
-                    className="text-gray-300 font-bold hover:text-white transition">
-                    Contact
-                  </Link>
-                </div>
-              </div>
-              {/* <ul className="flex gap-4">
-                        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-xl hover:text-blue-500 transition"><FaFacebook /></a></li>
-                        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-xl hover:text-blue-400 transition"><FaTwitter /></a></li>
-                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-xl hover:text-pink-500 transition"><FaInstagram /></a></li>
-                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-xl hover:text-blue-700 transition"><FaLinkedin /></a></li>
-                    </ul> */}
-            </div>
-          </div>
-        </div>
+    <footer className="relative bg-gradient-to-t from-black to-gray-900 border-t border-white/10">
+      {/* Background Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="cyber-grid opacity-10" />
       </div>
-      <div className="border-t border-gray-700 opacity-50 w-full" />
-      <div className="p-4 text-xs text-gray-300">
-        <p>© {new Date().getFullYear()} thinkingcat. All rights reserved.</p>
-        {/*<ul className="mt-1 flex justify-center gap-4">*/}
-        {/*    <li><Link href="/privacy" className="text-gray-400 hover:text-white transition">Privacy Policy</Link></li>*/}
-        {/*    <li><Link href="/terms" className="text-gray-400 hover:text-white transition">Terms of Service</Link></li>*/}
-        {/*</ul>*/}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Main Footer Content */}
+        <div className="py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Company Info */}
+            <motion.div
+              className="lg:col-span-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-8">
+                <motion.h3
+                  className="text-2xl font-heading text-white mb-2"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  THINKINGCAT
+                </motion.h3>
+                <motion.p
+                  className="text-lg text-blue-400 font-medium font-mono mb-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  띵킹캣
+                </motion.p>
+                <motion.p
+                  className="text-white/70 leading-relaxed max-w-md font-body"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  소프트웨어를 통해 더 편리한 일상과 새로운 가치를 제공합니다.
+                  혁신적인 기술로 고객의 꿈을 현실로 만들어갑니다.
+                </motion.p>
+              </div>
+
+              {/* Company Details */}
+              <motion.div
+                className="space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                {companyInfo.map((info, index) => (
+                  <motion.div
+                    key={info.label}
+                    className="flex flex-col sm:flex-row text-sm"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="text-white/60 font-medium font-body min-w-[100px] mb-1 sm:mb-0">
+                      {info.label}
+                    </span>
+                    <span className="text-white/80 font-mono">
+                      {info.value}
+                    </span>
+                  </motion.div>
+                ))}
+
+                {/* Address */}
+                <motion.div
+                  className="flex flex-col sm:flex-row text-sm"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.9 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-white/60 font-medium font-body min-w-[100px] mb-1 sm:mb-0">
+                    주소
+                  </span>
+                  <span className="text-white/80 font-body">
+                    서울특별시 강남구 개포로15길 3-4, 지101호 A240호(개포동)
+                  </span>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <motion.h4
+                className="text-lg font-semibold font-heading text-white mb-8"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                빠른 링크
+              </motion.h4>
+              <ul className="space-y-4">
+                {quickLinks.map((link, index) => (
+                  <motion.li
+                    key={link.name}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <Link
+                      href={link.href}
+                      className="text-white/70 hover:text-blue-400 transition-colors duration-200 inline-block hover:translate-x-1 transform font-body"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Projects */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <motion.h4
+                className="text-lg font-semibold font-heading text-white mb-8"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                프로젝트
+              </motion.h4>
+              <ul className="space-y-4">
+                {projects.map((project, index) => (
+                  <motion.li
+                    key={project.name}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <Link
+                      href={project.href}
+                      className="text-white/70 hover:text-blue-400 transition-colors duration-200 inline-block hover:translate-x-1 transform text-sm font-body"
+                    >
+                      {project.name}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <motion.div
+          className="border-t border-white/10 py-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            {/* Copyright */}
+            <motion.div
+              className="text-white/60 text-sm text-center md:text-left font-body"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              viewport={{ once: true }}
+            >
+              © {currentYear} thinkingcat. All rights reserved.
+            </motion.div>
+
+            {/* Made with love */}
+            <motion.div
+              className="flex items-center text-white/60 text-sm font-body"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              viewport={{ once: true }}
+            >
+              <span>Made with</span>
+              <motion.span
+                className="mx-2 text-red-400"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                ❤️
+              </motion.span>
+              <span>by ThinkingCat</span>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Scroll to Top Button */}
+        <motion.div
+          className="absolute bottom-8 right-8"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="w-12 h-12 bg-blue-500/20 hover:bg-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 hover:text-blue-300 transition-all duration-300 backdrop-blur-sm border border-blue-500/30"
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            ↑
+          </motion.button>
+        </motion.div>
       </div>
     </footer>
   );

@@ -1,84 +1,255 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { id: "projects", label: "PROJECTS", ko: "프로젝트" },
+    { id: "about", label: "ABOUT", ko: "소개" },
+    { id: "contact", label: "CONTACT", ko: "문의" },
+  ];
+
+  const scrollToSection = async (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+      const isMobile = window.innerWidth < 768;
+      const headerOffset = isMobile ? 70 : 80;
+      const elementPosition = element.offsetTop - headerOffset;
+
+      // 스크롤 실행
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+
+      // 실제 스크롤 완료까지 기다리기
+      await new Promise<void>((resolve) => {
+        let scrollTimeout: NodeJS.Timeout;
+        const checkScroll = () => {
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            const currentPosition = window.scrollY;
+            const targetReached =
+              Math.abs(currentPosition - elementPosition) < 10;
+
+            if (targetReached) {
+              resolve();
+            } else {
+              checkScroll();
+            }
+          }, 100);
+        };
+
+        setTimeout(checkScroll, 100);
+
+        // 최대 2초 후에는 강제로 완료 처리
+        setTimeout(() => {
+          resolve();
+        }, 2000);
+      });
+    }
+
+    // 스크롤 완료 후에 메뉴 닫기
+    setIsMenuOpen(false);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm hidden md:block">
-        <div className="flex items-center h-20 justify-between px-32">
-          {/* Logo */}
-          <motion.div 
-            className="flex items-center"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="mr-2">
-            <Image
-                src="/thinkingcat.png"
-                alt="thinkingcat icon"
-                width={40}
-                height={40}
-                className="w-10 h-10"
-              />
-            </div>
-            <div className="text-xl font-bold">THINKINGCAT</div>
-            {/* <motion.div 
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <Image
-                src="/thinkingcat.png"
-                alt="thinkingcat icon"
-                width={40}
-                height={40}
-                className="w-10 h-10"
-              />
-            </motion.div>
-            <motion.div 
-              className="ml-2 text-gray-100"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="text-lg font-bold">띵킹캣</div>
-              <div className="text-xs">thinkingcat</div>
-            </motion.div> */}
-          </motion.div>
-
-          {/* Navigation */}
-          <motion.nav 
-            className="flex items-center space-x-8 font-bold"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {[{ id: 'projects', ko: 'PROJECTS' }, { id: 'about', ko: 'ABOUT' }, { id: 'contact', ko: 'CONTACT' }].map((item) => (
-              <motion.a
-                key={item.id}
-                href={`#${item.id}`}
-                className="group relative"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+      {/* Desktop Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 hidden md:block">
+        <motion.div
+          className="surface-card border-b border-white/10"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="max-w-7xl mx-auto px-8 lg:px-12">
+            <div className="flex items-center justify-between h-20">
+              {/* Logo */}
+              <motion.button
+                type="button"
+                onClick={scrollToTop}
+                className="flex items-center space-x-4 group"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <motion.span
-                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
-                  layoutId={`nav-bg-${item.id}`}
-                />
-                <span className="relative font-medium text-gray-50 group-hover:text-gray-100">
-                  {item.ko}
-                </span>
-              </motion.a>
-            ))}
-          </motion.nav>
-        </div>
+                <motion.div
+                  className="relative"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image
+                    src="/thinkingcat.png"
+                    alt="thinkingcat icon"
+                    width={36}
+                    height={36}
+                    className="w-9 h-9 image-minimal"
+                  />
+                  <div className="absolute inset-0 bg-blue-500/20 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.div>
+                <div className="text-2xl font-heading text-white tracking-wide">
+                  THINKINGCAT
+                </div>
+              </motion.button>
+
+              {/* Navigation */}
+              <motion.nav
+                className="flex items-center space-x-2"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.id}
+                    type="button"
+                    onClick={() => scrollToSection(item.id)}
+                    className="relative px-6 py-3 text-sm font-medium font-heading text-white/80 hover:text-white transition-colors duration-200 group"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 + index * 0.1 }}
+                    whileHover={{ y: -2 }}
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    <motion.div
+                      className="absolute inset-0 bg-white/8 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                      whileHover={{ scale: 1.05 }}
+                    />
+                    <motion.div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  </motion.button>
+                ))}
+              </motion.nav>
+            </div>
+          </div>
+        </motion.div>
       </header>
 
-      {/* Spacer to prevent content from going under fixed header */}
-      <div className="hidden sm:block" />
+      {/* Mobile Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 md:hidden">
+        <motion.div
+          className="surface-card border-b border-white/10"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="px-6">
+            <div className="flex items-center justify-between h-16">
+              {/* Logo */}
+              <motion.button
+                type="button"
+                onClick={scrollToTop}
+                className="flex items-center space-x-3 group"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image
+                    src="/thinkingcat.png"
+                    alt="thinkingcat icon"
+                    width={28}
+                    height={28}
+                    className="w-7 h-7 image-minimal"
+                  />
+                </motion.div>
+                <div className="text-xl font-heading text-white">
+                  THINKINGCAT
+                </div>
+              </motion.button>
+
+              {/* Mobile Menu Button */}
+              <motion.button
+                type="button"
+                className="p-2 text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <motion.div
+                  className="w-6 h-6 flex flex-col justify-center items-center"
+                  animate={isMenuOpen ? "open" : "closed"}
+                >
+                  <motion.span
+                    className="block w-5 h-0.5 bg-current mb-1"
+                    variants={{
+                      closed: { rotate: 0, y: 0 },
+                      open: { rotate: 45, y: 6 },
+                    }}
+                  />
+                  <motion.span
+                    className="block w-5 h-0.5 bg-current mb-1"
+                    variants={{
+                      closed: { opacity: 1 },
+                      open: { opacity: 0 },
+                    }}
+                  />
+                  <motion.span
+                    className="block w-5 h-0.5 bg-current"
+                    variants={{
+                      closed: { rotate: 0, y: 0 },
+                      open: { rotate: -45, y: -6 },
+                    }}
+                  />
+                </motion.div>
+              </motion.button>
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          <motion.div
+            className="overflow-hidden"
+            initial={{ height: 0 }}
+            animate={{ height: isMenuOpen ? "auto" : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="px-6 py-4 border-t border-white/10">
+              <nav className="space-y-2">
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.id}
+                    type="button"
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/8 rounded-lg transition-colors duration-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{
+                      opacity: isMenuOpen ? 1 : 0,
+                      x: isMenuOpen ? 0 : -20,
+                    }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium font-heading">
+                        {item.label}
+                      </span>
+                      <span className="text-xs text-white/60 font-body">
+                        {item.ko}
+                      </span>
+                    </div>
+                  </motion.button>
+                ))}
+              </nav>
+            </div>
+          </motion.div>
+        </motion.div>
+      </header>
     </>
   );
 };
 
-export default Header; 
+export default Header;

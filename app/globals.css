@@ -1,10 +1,28 @@
+/* 전문적인 폰트 임포트 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #000000;
+  --background: #0a0a0a;
   --foreground: #ffffff;
+  --primary: #2563eb;
+  --secondary: #7c3aed;
+  --accent: #0891b2;
+  --surface: #111111;
+  --surface-dark: #0a0a0a;
+  --surface-glass: rgba(17, 17, 17, 0.8);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --gradient-primary: linear-gradient(135deg, #2563eb, #7c3aed);
+  --gradient-secondary: linear-gradient(135deg, #0891b2, #2563eb);
+  --glass-bg: rgba(17, 17, 17, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --header-bg: rgba(10, 10, 10, 0.95);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,10 +33,31 @@
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-primary);
   background: var(--background);
-  font-family: 'SUITE-Regular', sans-serif, Arial, Helvetica;
+  font-family: 'Source Sans Pro', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+}
+
+/* 전문적인 타이포그래피 시스템 */
+.font-heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.font-body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
 }
 
 @font-face {
@@ -28,665 +67,410 @@ body {
   font-style: normal;
 }
 
-/* 전체 페이지 */
-body {
-  font-family: 'SUITE-Regular', sans-serif;
+/* 전문적인 글래스모피즘 효과 */
+@layer utilities {
+  .glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  .glass-card {
+    background: rgba(17, 17, 17, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+  
+  .neo-glass {
+    background: var(--header-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 
+      0 4px 24px rgba(0, 0, 0, 0.4),
+      inset 0 1px 1px rgba(255, 255, 255, 0.06);
+  }
+
+  .surface-card {
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
 }
 
+/* 전문적인 그라데이션 효과 */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-mesh {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(8, 145, 178, 0.08) 0%, transparent 50%);
+  }
+}
+
+/* 개선된 네온 효과 */
+@layer utilities {
+  .neon-text {
+    color: var(--primary);
+    text-shadow: 
+      0 0 8px currentColor,
+      0 0 16px currentColor,
+      0 0 24px currentColor;
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  }
+  
+  .neon-border {
+    border: 1px solid var(--primary);
+    box-shadow: 
+      0 0 8px var(--primary),
+      inset 0 0 8px rgba(37, 99, 235, 0.1);
+    animation: neon-border-pulse 2s ease-in-out infinite alternate;
+  }
+  
+  .tech-glow {
+    box-shadow: 
+      0 0 16px rgba(37, 99, 235, 0.2),
+      0 0 32px rgba(37, 99, 235, 0.1),
+      0 0 48px rgba(37, 99, 235, 0.05);
+  }
+}
+
+/* 전문적인 애니메이션 */
+@keyframes neon-pulse {
+  0% {
+    text-shadow: 
+      0 0 8px currentColor,
+      0 0 16px currentColor,
+      0 0 24px currentColor;
+  }
+  100% {
+    text-shadow: 
+      0 0 4px currentColor,
+      0 0 8px currentColor,
+      0 0 12px currentColor;
+  }
+}
+
+@keyframes neon-border-pulse {
+  0% {
+    box-shadow: 
+      0 0 8px var(--primary),
+      inset 0 0 8px rgba(37, 99, 235, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 0 16px var(--primary),
+      inset 0 0 16px rgba(37, 99, 235, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 24px rgba(37, 99, 235, 0.4);
+  }
+}
+
+/* 전문적인 호버 효과 */
+@layer utilities {
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+      0 16px 32px rgba(0, 0, 0, 0.4),
+      0 0 32px rgba(37, 99, 235, 0.15);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 
+      0 0 24px rgba(37, 99, 235, 0.3),
+      0 0 48px rgba(37, 99, 235, 0.15);
+  }
+
+  .hover-scale {
+    transition: transform 0.2s ease-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* 전역 스무스 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 앵커 링크 기본 동작 방지 */
+a[href^="#"]:not([href="#"]) {
+  text-decoration: none;
+}
+
+/* 모바일 터치 최적화 */
+button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* 스크롤바 숨기기 */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 모바일 캐루셀 스크롤바 숨기기 */
+.mobile-carousel {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* 사용자 선택 색상 */
+::selection {
+  background: rgba(37, 99, 235, 0.3);
+  color: white;
+}
+
+/* 포커스 링 개선 */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* 인스타그램 링크 현대화 */
 .instagram-link {
-  margin-top: 20px;
+  margin-top: 24px;
   text-align: center;
 }
 
 .instagram-link a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  /* color: #333; */
+  gap: 12px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
 .instagram-link a:hover {
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes rainbow {
-  0% {
-    color: #ffCA28;
-  }
-
-  20% {
-    color: #ff2C5A;
-  }
-
-  40% {
-    color: #972DEA;
-  }
-
-  60% {
-    color: #058EE2;
-  }
-
-  80% {
-    color: #03EDD2;
-  }
-
-  100% {
-    color: #797979;
-  }
+/* 레인보우 효과 현대화 */
+@keyframes rainbow-modern {
+  0% { color: #2563eb; }
+  16% { color: #7c3aed; }
+  32% { color: #0891b2; }
+  48% { color: #059669; }
+  64% { color: #dc2626; }
+  80% { color: #ea580c; }
+  100% { color: #2563eb; }
 }
 
 .rainbow-hover:hover {
-  animation: rainbow 5s linear infinite;
+  animation: rainbow-modern 2s linear infinite;
 }
 
-@keyframes grid-fade {
-  0% {
-    opacity: 0.4;
-  }
-
-  50% {
-    opacity: 0.1;
-  }
-
-  100% {
-    opacity: 0.4;
-  }
-}
-
-.bg-grid-white {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  animation: grid-fade 4s infinite;
-}
-
-@layer utilities {
-  .bg-futuristic {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .bg-futuristic::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(200, 200, 200, 0.2), rgba(200, 200, 200, 0.3), rgba(255, 255, 255, 0.1));
-    background-size: 500% 500%;
-    /* 큰 배경 크기로 부드러운 흐름 */
-    animation: futuristic-glow 8s infinite;
-    animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    /* 빠르게 움직이게 */
-    animation-delay: calc(2s * var(--random-delay));
-    /* 랜덤한 지연 시간 */
-    mix-blend-mode: overlay;
-    pointer-events: none;
-  }
-
-  @keyframes futuristic-glow {
-    0% {
-      background-position: 0 0;
-    }
-
-    30% {
-      background-position: 100% 0;
-    }
-
-    60% {
-      background-position: 0 100%;
-    }
-
-    100% {
-      background-position: 0 0;
-    }
-  }
-
-  .bg-futuristic::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: transparent;
-    /* 가운데 원 느낌 없앰 */
-    opacity: 0.4;
-    pointer-events: none;
-  }
-}
-
-/* 사이버펑크 그리드 */
+/* 그리드 패턴 개선 */
 .cyber-grid {
-  background-image: linear-gradient(rgba(66, 138, 245, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(66, 138, 245, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  animation: grid-move 20s linear infinite;
+  background-image: 
+    linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-float 20s linear infinite;
 }
 
-/* 매트릭스 레인 효과 */
-.bg-matrix-rain {
+@keyframes grid-float {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
+
+/* 매트릭스 효과 개선 */
+.matrix-bg {
   background: linear-gradient(180deg,
-      transparent 0%,
-      rgba(66, 138, 245, 0.05) 50%,
-      transparent 100%);
-  background-size: 100% 20px;
-  animation: matrix-rain 20s linear infinite;
+    transparent 0%,
+    rgba(37, 99, 235, 0.02) 50%,
+    transparent 100%);
+  background-size: 100% 30px;
+  animation: matrix-flow 15s linear infinite;
 }
 
-/* 부유하는 파티클 */
+@keyframes matrix-flow {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 30px; }
+}
+
+/* 부유 파티클 효과 */
 .floating-particles {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: float 15s infinite linear;
+  background-image: 
+    radial-gradient(circle, rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(124, 58, 237, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px, 80px 80px;
+  animation: float-particles 20s infinite linear;
 }
 
-/* 네온 텍스트 효과 */
-.neon-text {
-  text-shadow: 0 0 10px rgba(66, 138, 245, 0.8),
-    0 0 20px rgba(66, 138, 245, 0.8),
-    0 0 30px rgba(66, 138, 245, 0.6);
-  animation: neon-pulse 2s infinite;
+@keyframes float-particles {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-60px, -60px); }
 }
 
-.neon-text-blue {
-  color: #4287f5;
-  text-shadow: 0 0 10px rgba(66, 138, 245, 0.8),
-    0 0 20px rgba(66, 138, 245, 0.8);
+/* 텍스트 효과 개선 */
+.text-glow {
+  text-shadow: 0 0 16px rgba(37, 99, 235, 0.4);
 }
 
-.neon-text-purple {
-  color: #a855f7;
-  text-shadow: 0 0 10px rgba(168, 85, 247, 0.8),
-    0 0 20px rgba(168, 85, 247, 0.8);
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-/* 사이버 라인 */
-.cyber-lines {
-  background: repeating-linear-gradient(90deg,
-      transparent,
-      transparent 40px,
-      rgba(66, 138, 245, 0.1) 40px,
-      rgba(66, 138, 245, 0.1) 41px);
-  animation: cyber-lines-move 10s linear infinite;
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-/* 글로우 텍스트 */
-.glowing-text {
-  animation: text-glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes grid-move {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(30px);
-  }
-}
-
-@keyframes matrix-rain {
-  0% {
-    background-position: 0 -1000px;
-  }
-
-  100% {
-    background-position: 0 1000px;
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(10px, 10px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes neon-pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes cyber-lines-move {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 100px 0;
-  }
-}
-
-@keyframes text-glow {
-  from {
-    text-shadow: 0 0 10px rgba(66, 138, 245, 0.8);
-  }
-
-  to {
-    text-shadow: 0 0 20px rgba(66, 138, 245, 0.8),
-      0 0 30px rgba(66, 138, 245, 0.6);
-  }
-}
-
-/* 그라데이션 도트 패턴 */
-.bg-gradient-radial-dots {
-  background-image: radial-gradient(circle, rgba(66, 138, 245, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-  animation: dots-fade 3s infinite;
-}
-
-/* 회로 패턴 */
-.bg-circuit-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80h-80z' fill='none' stroke='rgba(168, 85, 247, 0.2)' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: 50px 50px;
-  animation: circuit-glow 4s infinite;
-}
-
-@keyframes dots-fade {
-
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-
-  50% {
-    opacity: 0.1;
-  }
-}
-
-@keyframes circuit-glow {
-
-  0%,
-  100% {
-    filter: brightness(1);
-  }
-
-  50% {
-    filter: brightness(1.2);
-  }
-}
-
-/* 로고 글로우 효과 */
-.glow-effect {
-  filter: drop-shadow(0 0 8px rgba(66, 138, 245, 0.6));
-  transition: filter 0.3s ease;
-}
-
-.glow-effect:hover {
-  filter: drop-shadow(0 0 12px rgba(66, 138, 245, 0.8));
-}
-
-/* 네비게이션 호버 효과 */
-@keyframes nav-glow {
-  0% {
-    box-shadow: 0 0 5px rgba(66, 138, 245, 0.5),
-      0 0 10px rgba(66, 138, 245, 0.5);
-  }
-
-  100% {
-    box-shadow: 0 0 10px rgba(66, 138, 245, 0.8),
-      0 0 20px rgba(66, 138, 245, 0.8);
-  }
-}
-
-/* 글래스모피즘 효과 */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* 사이버펑크 스타일 텍스트 효과 */
-.cyber-text-glow {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(255, 255, 255, 0.8),
-    0 0 30px rgba(255, 255, 255, 0.6);
-  animation: cyber-text-flicker 4s infinite alternate;
-}
-
-.cyber-text-glow-primary {
-  color: #4287f5;
-  text-shadow: 0 0 10px rgba(66, 135, 245, 0.8),
-    0 0 20px rgba(66, 135, 245, 0.8),
-    0 0 30px rgba(66, 135, 245, 0.6);
-  animation: cyber-text-flicker 4s infinite alternate;
-}
-
-.cyber-text-glow-blue {
-  color: #60a5fa;
-  text-shadow: 0 0 10px rgba(96, 165, 250, 0.8),
-    0 0 20px rgba(96, 165, 250, 0.8),
-    0 0 30px rgba(96, 165, 250, 0.6);
-  animation: cyber-text-flicker 4s infinite alternate;
-}
-
-.cyber-text-glow-purple {
-  color: #a855f7;
-  text-shadow: 0 0 10px rgba(168, 85, 247, 0.8),
-    0 0 20px rgba(168, 85, 247, 0.8),
-    0 0 30px rgba(168, 85, 247, 0.6);
-  animation: cyber-text-flicker 4s infinite alternate;
-}
-
-/* 기술적인 느낌의 작은 텍스트 효과 */
-.tech-text-glow {
-  color: #94a3b8;
-  text-shadow: 0 0 5px rgba(148, 163, 184, 0.8);
-  animation: tech-text-pulse 2s infinite alternate;
-}
-
-.tech-text-glow-blue {
-  color: #93c5fd;
-  text-shadow: 0 0 5px rgba(147, 197, 253, 0.8);
-  animation: tech-text-pulse 2s infinite alternate;
-}
-
-.tech-text-glow-purple {
-  color: #c4b5fd;
-  text-shadow: 0 0 5px rgba(196, 181, 253, 0.8);
-  animation: tech-text-pulse 2s infinite alternate;
-}
-
-@keyframes cyber-text-flicker {
-
-  0%,
-  100% {
-    text-shadow: 0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 30px currentColor;
-  }
-
-  50% {
-    text-shadow: 0 0 5px currentColor,
-      0 0 15px currentColor,
-      0 0 25px currentColor;
-  }
-}
-
-@keyframes tech-text-pulse {
-  from {
-    opacity: 0.8;
-    text-shadow: 0 0 5px currentColor;
-  }
-
-  to {
-    opacity: 1;
-    text-shadow: 0 0 10px currentColor;
-  }
-}
-
-/* 사이버펑크 그리드 */
-.cyber-grid {
-  background-image: linear-gradient(rgba(66, 138, 245, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(66, 138, 245, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  animation: grid-move 20s linear infinite;
-}
-
-/* 매트릭스 레인 효과 */
-.bg-matrix-rain {
-  background: linear-gradient(180deg,
-      transparent 0%,
-      rgba(66, 138, 245, 0.05) 50%,
-      transparent 100%);
-  background-size: 100% 20px;
-  animation: matrix-rain 20s linear infinite;
-}
-
-/* 부유하는 파티클 */
-.floating-particles {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: float 15s infinite linear;
-}
-
-/* 네온 텍스트 효과 */
-.neon-text {
-  text-shadow: 0 0 10px rgba(66, 138, 245, 0.8),
-    0 0 20px rgba(66, 138, 245, 0.8),
-    0 0 30px rgba(66, 138, 245, 0.6);
-  animation: neon-pulse 2s infinite;
-}
-
-.neon-text-blue {
-  color: #4287f5;
-  text-shadow: 0 0 10px rgba(66, 138, 245, 0.8),
-    0 0 20px rgba(66, 138, 245, 0.8);
-}
-
-.neon-text-purple {
-  color: #a855f7;
-  text-shadow: 0 0 10px rgba(168, 85, 247, 0.8),
-    0 0 20px rgba(168, 85, 247, 0.8);
-}
-
-/* 사이버 라인 */
-.cyber-lines {
-  background: repeating-linear-gradient(90deg,
-      transparent,
-      transparent 40px,
-      rgba(66, 138, 245, 0.1) 40px,
-      rgba(66, 138, 245, 0.1) 41px);
-  animation: cyber-lines-move 10s linear infinite;
-}
-
-/* 글로우 텍스트 */
-.glowing-text {
-  animation: text-glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes grid-move {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(30px);
-  }
-}
-
-@keyframes matrix-rain {
-  0% {
-    background-position: 0 -1000px;
-  }
-
-  100% {
-    background-position: 0 1000px;
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(10px, 10px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes neon-pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes cyber-lines-move {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 100px 0;
-  }
-}
-
-@keyframes text-glow {
-  from {
-    text-shadow: 0 0 10px rgba(66, 138, 245, 0.8);
-  }
-
-  to {
-    text-shadow: 0 0 20px rgba(66, 138, 245, 0.8),
-      0 0 30px rgba(66, 138, 245, 0.6);
-  }
-}
-
-/* 그라데이션 도트 패턴 */
-.bg-gradient-radial-dots {
-  background-image: radial-gradient(circle, rgba(66, 138, 245, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-  animation: dots-fade 3s infinite;
-}
-
-/* 회로 패턴 */
-.bg-circuit-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80h-80z' fill='none' stroke='rgba(168, 85, 247, 0.2)' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: 50px 50px;
-  animation: circuit-glow 4s infinite;
-}
-
-@keyframes dots-fade {
-
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-
-  50% {
-    opacity: 0.1;
-  }
-}
-
-@keyframes circuit-glow {
-
-  0%,
-  100% {
-    filter: brightness(1);
-  }
-
-  50% {
-    filter: brightness(1.2);
-  }
-}
-
-.perspective-text {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.cyber-glitch-1 {
+/* 전문적인 버튼 스타일 */
+.btn-modern {
+  position: relative;
+  padding: 12px 32px;
+  border-radius: 6px;
+  background: var(--gradient-primary);
+  border: none;
   color: white;
-  text-shadow:
-    0 0 10px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(66, 138, 245, 0.8),
-    0 0 30px rgba(66, 138, 245, 0.6);
-  animation: cyber-glitch 3s infinite;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
-.cyber-glitch-2 {
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-modern::before {
+  content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  color: #0ff;
-  opacity: 0.5;
-  filter: blur(1px);
-  transform: translate3d(-2px, 2px, 0);
-  animation: cyber-glitch-2 4s infinite;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
-.cyber-glitch-3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #f0f;
-  opacity: 0.5;
-  filter: blur(1px);
-  transform: translate3d(2px, -2px, 0);
-  animation: cyber-glitch-3 4s infinite;
+.btn-modern:hover::before {
+  left: 100%;
 }
 
-@keyframes cyber-glitch {
-
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  20% {
-    transform: translate3d(-1px, 1px, 0);
-  }
-
-  40% {
-    transform: translate3d(1px, -1px, 0);
-  }
-
-  60% {
-    transform: translate3d(-1px, -1px, 0);
-  }
-
-  80% {
-    transform: translate3d(1px, 1px, 0);
-  }
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-@keyframes cyber-glitch-2 {
-
-  0%,
-  100% {
-    transform: translate3d(-2px, 2px, 0);
-    opacity: 0.5;
-  }
-
-  50% {
-    transform: translate3d(1px, -1px, 0);
-    opacity: 0.3;
-  }
+::-webkit-scrollbar-track {
+  background: var(--surface);
 }
 
-@keyframes cyber-glitch-3 {
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
 
-  0%,
-  100% {
-    transform: translate3d(2px, -2px, 0);
-    opacity: 0.5;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* 로딩 애니메이션 */
+@keyframes loading-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.loading-pulse {
+  animation: loading-pulse 1.5s ease-in-out infinite;
+}
+
+/* 반응형 유틸리티 */
+@media (max-width: 819px) {
+  .glass-effect,
+  .glass-card,
+  .neo-glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .tech-glow {
+    box-shadow: 
+      0 0 8px rgba(37, 99, 235, 0.2),
+      0 0 16px rgba(37, 99, 235, 0.1);
   }
 
-  50% {
-    transform: translate3d(-1px, 1px, 0);
-    opacity: 0.3;
+  body {
+    font-size: 14px;
   }
 }
 
-.perspective-text:hover .cyber-glitch-1 {
-  animation: cyber-glitch 0.5s infinite;
+/* 각진 이미지 스타일 */
+.image-sharp {
+  border-radius: 0;
 }
 
-.perspective-text:hover .cyber-glitch-2,
-.perspective-text:hover .cyber-glitch-3 {
-  animation-duration: 0.5s;
+.image-minimal {
+  border-radius: 4px;
 }
