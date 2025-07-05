@@ -147,12 +147,12 @@ const Projects = () => {
                   transition={{ duration: 0.3 }}
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 sm:h-52 overflow-hidden">
+                  <div className="relative h-48 sm:h-52 overflow-hidden bg-gray-800">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700 image-sharp"
+                      className="object-contain group-hover:scale-105 transition-transform duration-500 image-sharp"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
