@@ -11,49 +11,26 @@ const Header = () => {
     { id: "contact", label: "CONTACT", ko: "문의" },
   ];
 
-  const scrollToSection = async (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-
-    if (element) {
-      const isMobile = window.innerWidth < 768;
-      const headerOffset = isMobile ? 70 : 80;
-      const elementPosition = element.offsetTop - headerOffset;
-
-      // 스크롤 실행
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      });
-
-      // 실제 스크롤 완료까지 기다리기
-      await new Promise<void>((resolve) => {
-        let scrollTimeout: NodeJS.Timeout;
-        const checkScroll = () => {
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            const currentPosition = window.scrollY;
-            const targetReached =
-              Math.abs(currentPosition - elementPosition) < 10;
-
-            if (targetReached) {
-              resolve();
-            } else {
-              checkScroll();
-            }
-          }, 100);
-        };
-
-        setTimeout(checkScroll, 100);
-
-        // 최대 2초 후에는 강제로 완료 처리
-        setTimeout(() => {
-          resolve();
-        }, 2000);
-      });
-    }
-
-    // 스크롤 완료 후에 메뉴 닫기
+  const scrollToSection = (sectionId: string) => {
+    // 메뉴를 먼저 닫기
     setIsMenuOpen(false);
+
+    // DOM 업데이트 완료 후 스크롤 실행
+    requestAnimationFrame(() => {
+      const element = document.getElementById(sectionId);
+
+      if (element) {
+        const isMobile = window.innerWidth < 768;
+        const headerOffset = isMobile ? 70 : 80;
+        const elementPosition = element.offsetTop - headerOffset;
+
+        // 스크롤 실행
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth",
+        });
+      }
+    });
   };
 
   const scrollToTop = () => {
@@ -98,8 +75,8 @@ const Header = () => {
                   />
                   <div className="absolute inset-0 bg-blue-500/20 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                 </motion.div>
-                <div className="text-2xl font-heading text-white tracking-wide">
-                  THINKINGCAT
+                <div className="text-lg font-heading text-white tracking-wide font-mono">
+                  thinkingcat
                 </div>
               </motion.button>
 
@@ -166,8 +143,8 @@ const Header = () => {
                     className="w-7 h-7 image-minimal"
                   />
                 </motion.div>
-                <div className="text-xl font-heading text-white">
-                  THINKINGCAT
+                <div className="text-md font-heading text-white font-mono">
+                  thinkingcat
                 </div>
               </motion.button>
 

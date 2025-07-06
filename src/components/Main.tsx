@@ -94,7 +94,7 @@ const Main = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading text-white mb-3 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading text-white mb-3 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -151,7 +151,7 @@ const Main = () => {
           >
             <motion.a
               href="#projects"
-              className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold font-heading text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-2 py-1 sm:px-6 sm:py-3 md:px-8 md:py-4 text-xs sm:text-base md:text-lg font-semibold font-heading text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
