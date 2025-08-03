@@ -250,9 +250,9 @@ const Contact = () => {
                     <div className="flex items-center flex-1 min-w-0">
                       <span className="text-2xl mr-3 flex-shrink-0">📧</span>
                       <div className="text-left flex-1 min-w-0">
-                        <div className="text-white font-semibold font-mono break-all">
+                        {/* <div className="text-white font-semibold font-mono break-all">
                           thinkingcatworks@gmail.com
-                        </div>
+                        </div> */}
                         <div className="text-white/60 text-sm font-body">
                           클릭하여 이메일 보내기
                         </div>
