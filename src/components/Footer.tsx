@@ -12,11 +12,11 @@ const Footer: React.FC = () => {
   ];
 
   const projects = [
-    { name: "체크온", href: "/projects/checkon" },
-    { name: "투두게더", href: "/projects/godsaeng" },
-    { name: "피움뜰", href: "/projects/pium" },
-    { name: "동물원관리시스템", href: "/projects/zootop" },
-    { name: "오히후", href: "/projects/ohihoo" },
+    { name: "체크온", href: "https://checkonthemusic.com", external: true },
+    { name: "투두게더", href: "/projects/godsaeng", external: false },
+    { name: "피움뜰", href: "https://piumddeul.com", external: true },
+    { name: "동물원관리시스템", href: "/projects/zootop", external: false },
+    { name: "오히후", href: "https://ohihoo.com", external: true },
   ];
 
   const companyInfo = [
@@ -181,12 +181,23 @@ const Footer: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Link
-                      href={project.href}
-                      className="text-white/70 hover:text-blue-400 transition-colors duration-200 inline-block hover:translate-x-1 transform text-sm font-body"
-                    >
-                      {project.name}
-                    </Link>
+                    {project.external ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/70 hover:text-blue-400 transition-colors duration-200 inline-block hover:translate-x-1 transform text-sm font-body"
+                      >
+                        {project.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={project.href}
+                        className="text-white/70 hover:text-blue-400 transition-colors duration-200 inline-block hover:translate-x-1 transform text-sm font-body"
+                      >
+                        {project.name}
+                      </Link>
+                    )}
                   </motion.li>
                 ))}
               </ul>

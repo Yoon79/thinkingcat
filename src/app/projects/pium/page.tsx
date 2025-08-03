@@ -79,7 +79,7 @@ export default function PiumProject() {
         }
       }
     } else {
-      // 거의 스와이프하지 않았으면 원래 위치로
+      // 거의 스와이프하지 않았으면 원래 위치로 확실히 돌아감
       if (isClient && windowWidth > 0) {
         setX(-currentIndex * windowWidth);
       }
