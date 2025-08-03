@@ -247,10 +247,10 @@ const Contact = () => {
                   viewport={{ once: true }}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <span className="text-2xl mr-3">📧</span>
-                      <div className="text-left">
-                        <div className="text-white font-semibold font-mono">
+                    <div className="flex items-center flex-1 min-w-0">
+                      <span className="text-2xl mr-3 flex-shrink-0">📧</span>
+                      <div className="text-left flex-1 min-w-0">
+                        <div className="text-white font-semibold font-mono break-all">
                           thinkingcatworks@gmail.com
                         </div>
                         <div className="text-white/60 text-sm font-body">
@@ -260,7 +260,7 @@ const Contact = () => {
                     </div>
                     <motion.button
                       onClick={handleCopyEmail}
-                      className="p-2 rounded-sm bg-white/10 hover:bg-white/20 transition-colors"
+                      className="p-2 rounded-sm bg-white/10 hover:bg-white/20 transition-colors flex-shrink-0 ml-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >

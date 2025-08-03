@@ -15,7 +15,7 @@ const Projects = () => {
       tags: ["E-commerce", "React", "Node.js"],
       partners: ["오히후", "띵킹캣"],
       category: "웹 개발",
-      year: "2024",
+      year: "2025",
     },
     {
       id: "checkon",
@@ -25,7 +25,7 @@ const Projects = () => {
       tags: ["Management", "Vue.js", "Spring"],
       partners: ["mcmi", "띵킹캣"],
       category: "시스템 개발",
-      year: "2024",
+      year: "2025",
     },
     {
       id: "godsaeng",
