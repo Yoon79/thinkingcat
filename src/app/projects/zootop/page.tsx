@@ -9,30 +9,61 @@ import { useState, useEffect, useRef } from "react";
 export default function ZootopProject() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [x, setX] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [isClient, setIsClient] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const screenshots = ["/zootop1.png", "/zootop2.png", "/zootop3.png"];
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setX(-currentIndex * window.innerWidth);
+    setIsClient(true);
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isClient && windowWidth > 0) {
+      setX(-currentIndex * windowWidth);
     }
-  }, [currentIndex]);
+  }, [currentIndex, windowWidth, isClient]);
 
   const handleDragEnd = (
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
-    const swipeThreshold = 50;
+    const swipeThreshold = windowWidth * 0.15; // 화면 너비의 15%로 임계값 줄임
     const swipe = info.offset.x;
-    if (Math.abs(swipe) > swipeThreshold) {
+
+    if (swipe > swipeThreshold && currentIndex > 0) {
+      // 오른쪽으로 스와이프했고, 이전 슬라이드가 있는 경우
+      setCurrentIndex(currentIndex - 1);
+    } else if (
+      swipe < -swipeThreshold &&
+      currentIndex < screenshots.length - 1
+    ) {
+      // 왼쪽으로 스와이프했고, 다음 슬라이드가 있는 경우
+      setCurrentIndex(currentIndex + 1);
+    } else if (Math.abs(swipe) > 20) {
+      // 조금이라도 스와이프했다면 방향에 따라 이동
       if (swipe > 0 && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1);
       } else if (swipe < 0 && currentIndex < screenshots.length - 1) {
         setCurrentIndex(currentIndex + 1);
+      } else {
+        // 첫/마지막 슬라이드인 경우 원래 위치로
+        if (isClient && windowWidth > 0) {
+          setX(-currentIndex * windowWidth);
+        }
       }
     } else {
-      if (typeof window !== "undefined") {
-        setX(-currentIndex * window.innerWidth);
+      // 거의 스와이프하지 않았으면 원래 위치로
+      if (isClient && windowWidth > 0) {
+        setX(-currentIndex * windowWidth);
       }
     }
   };
@@ -195,22 +226,23 @@ export default function ZootopProject() {
                 <motion.div
                   className="flex touch-pan-y"
                   drag="x"
+                  dragElastic={0.2}
                   dragConstraints={
-                    typeof window !== "undefined"
+                    isClient && windowWidth > 0
                       ? {
-                          left: -((screenshots.length - 1) * window.innerWidth),
+                          left: -((screenshots.length - 1) * windowWidth),
                           right: 0,
                         }
                       : undefined
                   }
                   onDragEnd={handleDragEnd}
                   animate={{ x }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  transition={{ type: "tween", duration: 0.1 }}
                   style={{
-                    touchAction: "pan-y pinch-zoom",
+                    touchAction: "pan-x",
                     width:
-                      typeof window !== "undefined"
-                        ? `${screenshots.length * window.innerWidth}px`
+                      isClient && windowWidth > 0
+                        ? `${screenshots.length * windowWidth}px`
                         : undefined,
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
@@ -222,8 +254,8 @@ export default function ZootopProject() {
                       className="flex-shrink-0 flex items-center relative select-none"
                       style={{
                         width:
-                          typeof window !== "undefined"
-                            ? `${window.innerWidth}px`
+                          isClient && windowWidth > 0
+                            ? `${windowWidth}px`
                             : "100vw",
                         opacity: currentIndex === index ? 1 : 0.4,
                         transition: "all 0.3s ease",
