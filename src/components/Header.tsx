@@ -21,10 +21,10 @@ const Header = () => {
     // 메뉴를 먼저 닫기
     setIsMenuOpen(false);
 
-    // 외부 링크인 경우 새 탭에서 열기
+    // 외부 링크인 경우 현재 화면에서 이동
     const navItem = navItems.find((item) => item.id === sectionId);
     if (navItem?.external) {
-      window.open(navItem.external, "_blank", "noopener,noreferrer");
+      window.location.href = navItem.external;
       return;
     }
 
