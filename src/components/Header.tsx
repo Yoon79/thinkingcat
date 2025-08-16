@@ -6,6 +6,12 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
+    {
+      id: "dashboard",
+      label: "DASHBOARD",
+      ko: "대시보드",
+      external: "https://sso.thinkingcatworks.com",
+    },
     { id: "projects", label: "PROJECTS", ko: "프로젝트" },
     { id: "about", label: "ABOUT", ko: "소개" },
     { id: "contact", label: "CONTACT", ko: "문의" },
@@ -14,6 +20,13 @@ const Header = () => {
   const scrollToSection = (sectionId: string) => {
     // 메뉴를 먼저 닫기
     setIsMenuOpen(false);
+
+    // 외부 링크인 경우 새 탭에서 열기
+    const navItem = navItems.find((item) => item.id === sectionId);
+    if (navItem?.external) {
+      window.open(navItem.external, "_blank", "noopener,noreferrer");
+      return;
+    }
 
     // DOM 업데이트 완료 후 스크롤 실행
     requestAnimationFrame(() => {
