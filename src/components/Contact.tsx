@@ -238,42 +238,11 @@ const Contact = () => {
                   프로젝트 가능성을 탐색해보세요.
                 </motion.p>
 
-                {/* Email with Copy Feature */}
-                <motion.div
-                  className="bg-black/20 rounded-lg p-6 mb-8 border border-white/10"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center flex-1 min-w-0">
-                      <span className="text-2xl mr-3 flex-shrink-0">📧</span>
-                      <div className="text-left flex-1 min-w-0">
-                        {/* <div className="text-white font-semibold font-mono break-all">
-                          thinkingcatworks@gmail.com
-                        </div> */}
-                        <div className="text-white/60 text-sm font-body">
-                          클릭하여 이메일 보내기
-                        </div>
-                      </div>
-                    </div>
-                    <motion.button
-                      onClick={handleCopyEmail}
-                      className="p-2 rounded-sm bg-white/10 hover:bg-white/20 transition-colors flex-shrink-0 ml-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {copiedEmail ? "✓" : "📋"}
-                    </motion.button>
-                  </div>
-                </motion.div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                {/* CTA Button */}
+                <div className="flex justify-center">
                   <motion.a
                     href="mailto:thinkingcatworks@gmail.com"
-                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold font-heading rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold font-heading rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: 20 }}
@@ -281,27 +250,14 @@ const Contact = () => {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     viewport={{ once: true }}
                   >
-                    <span>이메일 보내기</span>
+                    <span>이메일 보내기 / 제안하기</span>
                     <motion.div
-                      className="ml-2"
+                      className="ml-3"
                       animate={{ x: [0, 4, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     >
                       →
                     </motion.div>
-                  </motion.a>
-
-                  <motion.a
-                    href="mailto:thinkingcatworks@gmail.com?subject=사업 제안"
-                    className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-white/20 text-white hover:border-blue-500 hover:text-blue-400 rounded-lg font-semibold font-heading transition-all duration-300"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1 }}
-                    viewport={{ once: true }}
-                  >
-                    사업 제안
                   </motion.a>
                 </div>
               </div>
