@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const Contact = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [copiedEmail, setCopiedEmail] = useState(false);
 
   const contactMethods = [
     {
@@ -31,16 +30,6 @@ const Contact = () => {
       action: "mailto:thinkingcatworks@gmail.com?subject=기술 지원",
     },
   ];
-
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("thinkingcatworks@gmail.com");
-      setCopiedEmail(true);
-      setTimeout(() => setCopiedEmail(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy email:", err);
-    }
-  };
 
   return (
     <section
